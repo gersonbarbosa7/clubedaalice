@@ -1,0 +1,13 @@
+footer {
+	#agenda {
+		@include make-sm-column(2);
+		margin-top: 20px;
+		margin-bottom: 20px;
+
+		> a {
+			> img {
+				@include img-responsive;
+			}
+		}
+	}
+}

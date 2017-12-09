@@ -1,0 +1,203 @@
+@import "../vendor/bootstrap-sass/assets/stylesheets/bootstrap/mixins";
+@import "../vendor/bootstrap-sass/assets/stylesheets/bootstrap/variables";
+
+@import "atoms/home/read-more";
+@import "molecules/home/slider";
+@import "molecules/home/newsletter";
+@import "molecules/home/article";
+@import "molecules/pagination";
+@import "molecules/home/share-icons";
+@import "molecules/home/widget";
+
+@import "organisms/categoria-subheader";
+/*
+.inicio {
+	padding: 40px 0;
+	.grid {
+
+		.google-ads {
+			max-height: 270px;
+			h3 {
+			    display: block;
+			    width: 100%;
+			    padding: 12px;
+			    background-color: #bfbfbf;
+			    color: $branco;
+			    font-size: 16px;
+			    margin: 0;
+			    font-size: 12px;
+			}
+		}
+
+		@include make-row;
+		.grid-item {
+			@include make-sm-column(3);
+			@include make-xs-column(6);
+			@include clearfix;
+			margin: 0 0 20px;
+			img {
+				border-bottom: 4px solid $rosa;
+			}
+			.anuncio {
+				img {
+					border: 0;
+				}
+			}
+
+			.box {
+				border: 1px solid #ddd;
+				background-color: #e8e8e8;
+				overflow: hidden;
+				@include border-radius(7px);
+				@include transition(.4s);
+
+				.imagem-destacada {
+					@include clearfix;
+					position: relative;
+					width: 100%;
+					height: 100%;
+				}
+
+				.views {
+					position: absolute;
+					bottom: 0;
+					left: 0;
+					width: 100%;
+					color: $branco;
+					z-index: 2;
+					height: 70px;
+					z-index: 1;
+					padding: 43px 12px 0;
+					background: -moz-linear-gradient(top,  rgba(0,0,0,0) 0%, rgba(0,0,0,0.65) 100%);
+					background: -webkit-linear-gradient(top,  rgba(0,0,0,0) 0%,rgba(0,0,0,0.65) 100%);
+					background: linear-gradient(to bottom,  rgba(0,0,0,0) 0%,rgba(0,0,0,0.65) 100%);
+					filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00000000', endColorstr='#a6000000',GradientType=0 );
+				}
+
+				img {
+					@include img-responsive;
+				}
+
+				&:hover {
+					background-color: $rosa;
+					.share-icons li a,
+					h2 {
+						color: $branco;
+					}
+					.categoria {
+						color: $branco;
+						border-color: $branco;
+					}
+				}
+				.conteudo {
+					padding: 14px;
+				}
+				h2 {
+					font-size: 18px;
+					margin: 0;
+					padding: 0 0 12px;
+					border-bottom: 3px solid rgba(0,0,0,.1);
+					font-family: $medium_font;
+				}
+				.share-icons {
+					padding: 0 14px;
+					li {
+						display: inline-block;
+						margin: 0 7px 0 0;
+						a {
+							font-size: 25px;
+							@media screen and (max-width: 470px) {
+								font-size: 18px;
+							}
+							color: $rosa;
+							@include transition(.4s);
+							&:hover {
+								color: $azul;
+							}
+						}
+					}
+				}
+				.categoria {
+					margin: 14px;
+					padding: 5px 14px;
+					display: table;
+					color: $rosa;
+					font-size: 12px;
+					border: 1px solid $rosa;
+					@include border-radius(5px);
+				}
+			}
+		}
+	}
+
+	.wp-pagenavi {
+		float: none;
+	}
+
+	.lista {
+		border: 1px solid #ddd;
+		padding: 15px;
+		@include clearfix;
+		li {
+			@include make-sm-column(3);
+			
+			border-right: 1px solid #ddd;
+			min-height: 60px !important;
+
+			@media screen and (max-width: 470px) {
+				border: none;
+			}
+			
+			&:hover {
+				.number,
+				a {
+					color: $rosa;
+				}
+			}
+
+			&:last-child {
+				border: none;
+			}
+
+			.number,
+			a {
+				@include transition(.4s);
+			}
+
+			.number {
+				color: #b5b5b5;
+				font-size: 40px;
+				margin: 0 10px 0 0;
+				float: left;
+			}
+			a {
+				color: #4c535d;					
+				padding: 11px 0;
+				display: block;
+			}
+			.facebook {
+				margin: 15px 0 0;
+			}
+		}			
+	}
+
+	.widgets-pequenos {
+		@include clearfix;
+		text-align: center;
+		li {
+			width: 360px;
+			display: inline-block;
+			margin: 0 15px 0 0;
+			@media screen and (max-width: 470px ) {
+				margin: 0;
+				img {
+					@include img-responsive;
+				}
+			}
+			&:last-child {
+				margin: 0;
+			}
+		}
+	}
+}
+*/

@@ -1,0 +1,22 @@
+#tags {
+	text-transform: uppercase;
+	color: #000;
+	font: bold 14px $medium_font;			
+	a {
+		display: inline-block;
+		margin: 0 5px 0;
+		text-transform: uppercase;
+		font: normal 14px $main_font;
+		border: 1px solid $rosa;
+		font-size: 12px;
+		color: $cinza;
+		@include border-radius(120px);
+		padding: 5px;
+		transition: all 0.5s linear;
+		&:hover {
+			background-color: $azul;
+			border-color: $azul;
+			color: $branco;
+		}
+	}
+}

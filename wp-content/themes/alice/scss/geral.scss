@@ -1,0 +1,109 @@
+@import "loader";
+@import "atoms/titulo-das-secoes";
+@import "organisms/top-bar";
+@import "organisms/header";
+@import "organisms/navigation";
+@import "organisms/footer";
+@import "molecules/header/social-icons";
+@import "molecules/header/bottom";
+@import "molecules/formulario";
+@import "atoms/header/logo";
+@import "atoms/header/seja-uma-alice";
+@import "atoms/widget";
+@import "atoms/botao";
+
+body,
+html {
+	overflow-x: hidden;
+}
+
+.desconto {
+	height: 70px;
+    width: 70px;
+    display: table;
+    margin: 0 auto 15px;
+    @include border-radius(50%);
+    color: #fff;
+    text-align: center;
+    line-height: 70px;
+    font-size: 20px;
+    font-weight: 600;
+    font-family: 'Open Sans';
+}
+
+a {
+	&:hover {
+		text-decoration: none;
+	}
+}
+.post-content {
+	.googlepublisherpluginad {
+		margin: 0 0 20px !important;
+	}	
+	@media screen and (max-width: 440px) {
+		img {
+			@include img-responsive;
+			width: 100%;
+
+		}
+	}
+}
+
+
+p {
+	line-height: 22px;
+	font-size: 15px;
+	margin: 0 0 20px;
+}
+
+.visible {
+	display: block !important;
+}
+
+.aligncenter {
+	text-align: center !important;
+	margin: 0 auto !important;
+	display: block;
+}
+
+.owl-theme .owl-nav {
+	margin-top: 0 !important;
+}
+
+.owl-theme .owl-nav.disabled+.owl-dots {
+	margin-top: 0 !important;
+}
+
+.owl-theme .owl-nav .owl-next {
+	right: -30px;
+    top: 10px;
+}
+
+.owl-theme .owl-nav .owl-prev {
+	left: -30px;
+    top: 10px;
+}
+
+main .categorias li:last-child, main .datas li:last-child {
+	margin: 0 !important;
+}
+
+@media screen and (max-width: 768px) {
+	.owl-theme .owl-nav [class*=owl-] {
+		background: transparent !important;
+		position: absolute;
+	}
+
+	main .categorias, main .datas {
+		margin: 0 !important;
+	}
+}
+
+#top-bar-sticky-wrapper {
+	position: relative;
+	z-index: 99999999;
+}
+
+body #top-bar {
+	z-index: 99999 !important;
+}

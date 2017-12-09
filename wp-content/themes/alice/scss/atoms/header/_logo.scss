@@ -1,0 +1,33 @@
+body {
+	> header {
+		#logo {
+			display: block;
+			@include make-sm-column(3);
+			@include make-sm-column-offset(2);
+			@include make-xs-column(5);
+
+			> img {
+				margin: 0 auto;
+				width: 75%;
+				height: auto;
+			}
+		}
+	}
+}
+
+@media screen and (max-width: 450px) {
+	body {
+		> header {
+			#logo {
+				img {
+					width: 100% !important;
+					height: auto !important;
+				}
+			}
+		}
+	}
+}
+
+
+
+

@@ -1,0 +1,32 @@
+@import "molecules/interna/share";
+
+#dados-do-evento {
+	> li {
+		display: inline-block;
+		margin-right: 140px;
+		font-size: 14px;
+		text-transform: uppercase;
+
+		h5 {
+			font: 14px $medium_font;
+			color: #000;
+		}
+
+		.share {
+			text-align: left;
+			> li {
+				> a {
+					width: 30px;
+					height: 30px;
+					line-height: 30px;
+					border-width: 2px;
+					text-align: center;
+
+					> i {
+						font-size: 18px;
+					}
+				}
+			}
+		}
+	}
+}

@@ -1,0 +1,21 @@
+@import "../vendor/bootstrap-sass/assets/stylesheets/bootstrap/mixins";
+@import "../vendor/bootstrap-sass/assets/stylesheets/bootstrap/variables";
+
+@import "atoms/home/read-more";
+@import "molecules/home/slider";
+@import "molecules/home/newsletter";
+@import "molecules/home/article";
+@import "molecules/pagination";
+@import "molecules/home/share-icons";
+@import "molecules/home/widget";
+
+#content-page {
+	@include make-row;
+	#posts {
+		@include make-sm-column(8);
+	}
+
+	#sidebar {
+		@include make-sm-column(4);
+	}
+}

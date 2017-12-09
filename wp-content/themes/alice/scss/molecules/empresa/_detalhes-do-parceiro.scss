@@ -1,0 +1,56 @@
+h5 {
+	i {
+		color: #e1367f;
+	}
+}
+
+#detalhes-do-parceiro {
+	position: relative;
+	margin: 30px auto 0;
+
+	> header {
+		margin-top: 0;
+		margin-bottom: 30px;
+		position: relative;
+	}
+
+	> .share {
+		position: absolute;
+		right: 15px;
+		top: 0;
+		h2 {
+			font-size: 18px;
+		}
+	}
+
+	> .main {
+		p {
+			@include make-sm-column(12);
+		}
+		ul.content {
+			.altura {
+				@include clearfix;
+				min-height: 130px;
+			}
+			> li:first-child {
+				@include make-sm-column(8);
+			}
+			> li:last-child {
+				@include make-sm-column(4);
+			}	
+			p {
+				padding-left: 0 !important;
+			}		
+		}
+
+	}
+}
+
+@media (max-width: 450px) {
+	#detalhes-do-parceiro {
+		> .share {
+			position: relative !important;
+			margin: 0 0 20px;
+		}
+	}
+}

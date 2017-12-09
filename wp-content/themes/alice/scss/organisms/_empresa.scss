@@ -1,0 +1,69 @@
+@import "../vendor/bootstrap-sass/assets/stylesheets/bootstrap/mixins";
+@import "../vendor/bootstrap-sass/assets/stylesheets/bootstrap/variables";
+
+@import "atoms/interna/fb-comments";
+@import "atoms/home/read-more";
+@import "molecules/empresas/parceiros";
+@import "molecules/empresa/parceiros-relacionados";
+@import "molecules/empresa/detalhes-do-parceiro";
+
+@import "molecules/empresa/galeria";
+
+@import "molecules/empresa/dados-de-contato";
+@import "molecules/interna/share";
+
+iframe {
+	width: 100%;
+	min-width: 100%;
+	height: 300px;
+}
+
+#destaque-parceiro {
+	width: 100%;
+	display: block;
+}
+
+.thumb-destaque {
+	position: relative;
+	z-index: 1;
+	.fumaca {
+		position: absolute;
+		bottom: 0;
+		left: 0;
+		display: block;
+		opacity: 1;
+		width: 100%;
+		height: 150px;
+		background: -moz-linear-gradient(top,  rgba(0,0,0,0) 0%, rgba(0,0,0,0.65) 100%);
+		background: -webkit-linear-gradient(top,  rgba(0,0,0,0) 0%,rgba(0,0,0,0.65) 100%);
+		background: linear-gradient(to bottom,  rgba(0,0,0,0) 0%,rgba(0,0,0,0.65) 100%);
+		filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00000000', endColorstr='#a6000000',GradientType=0 );
+	}
+}
+
+#content-page {
+	@include make-row;
+	> #comentarios {
+		@include make-sm-column(8);
+
+		header {
+			> h3 {
+				font-size: 16px;
+			}
+		}
+	}
+	> #publicidades {
+		@include make-sm-column(4);
+		padding-top: 40px;
+
+		a {
+			display: block;
+			margin-bottom: 20px;
+
+			img {
+				@include img-responsive;
+			}
+		}
+	}
+}
+

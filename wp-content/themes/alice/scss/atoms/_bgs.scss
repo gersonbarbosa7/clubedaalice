@@ -1,0 +1,9 @@
+.bg-container {
+	padding: 4px 0;
+	> .bg-border {
+		border-style: dashed;
+		border-width: 1px;
+		border-left: none;
+		border-right: none;
+	}
+}

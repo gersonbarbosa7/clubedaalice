@@ -1,0 +1,30 @@
+@import "../vendor/bootstrap-sass/assets/stylesheets/bootstrap/mixins";
+@import "../vendor/bootstrap-sass/assets/stylesheets/bootstrap/variables";
+
+@import "atoms/interna/fb-comments";
+@import "molecules/categoria/newsletter";
+@import "molecules/home/article";
+@import "molecules/home/widget";
+@import "molecules/interna/tags";
+@import "molecules/interna/share";
+@import "molecules/interna/autor";
+
+#content-page {
+	@include make-row;
+	#posts {
+		@include make-sm-column(8);
+		article {
+			footer {
+				height: auto;
+				background: transparent;
+				margin-top: 30px;
+			}
+		}
+	}
+	#sidebar {
+		@include make-sm-column(4);
+	}
+	#newsletter {
+		margin: 0 !important;
+	}
+}

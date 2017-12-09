@@ -1,0 +1,25 @@
+{
+  "name": "clubedaalice",
+  "version": "1.0.0",
+  "description": "Portal de Mulheres Empreendedoras.",
+  "main": "index.js",
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@bitbucket.org/sitealice/clubedaaliceauth.git"
+  },
+  "keywords": [
+    "alice",
+    "mundo",
+    "grupo",
+    "mulheres",
+    "empreender",
+    "viagem",
+    "facebook"
+  ],
+  "author": "Clube da Alice",
+  "license": "ISC",
+  "homepage": "https://bitbucket.org/sitealice/clubedaaliceauth#readme"
+}

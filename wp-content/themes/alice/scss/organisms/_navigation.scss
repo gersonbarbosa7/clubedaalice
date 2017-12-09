@@ -1,0 +1,19 @@
+@import "../vendor/bootstrap-sass/assets/stylesheets/bootstrap/mixins";
+@import "../vendor/bootstrap-sass/assets/stylesheets/bootstrap/variables";
+
+@import "molecules/navigation/menu";
+@import "atoms/navigation/seja-uma-alice";
+
+body {
+	> #main-nav {
+		background-color: #e1367f;
+
+		> .bg-border {
+			border-color: #922252;
+		}
+
+		nav {
+			@include make-row;
+		}
+	}
+}

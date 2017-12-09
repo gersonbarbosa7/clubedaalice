@@ -1,0 +1,48 @@
+@import "atoms/footer/agenda";
+@import "atoms/footer/logo";
+@import "atoms/footer/description";
+@import "molecules/footer/alice-na-midia";
+@import "molecules/footer/menus-do-rodape";
+@import "molecules/footer/titulo-das-secoes";
+@import "molecules/footer/social-icons";
+
+
+footer {
+	> #footer-top {
+		background-color: #383838;
+		a {
+			&:hover {
+				color: #54c2c9;
+			}
+			&:focus {
+				color: #E13666;
+			}
+		}
+
+		.menu-rodape {
+			text-align: left;
+			li {
+				a {
+					display: block;
+					padding: 10px 0;
+				}
+			}
+		}
+	}
+	> #footer-bottom {
+		background-color: #54c2c9;
+		padding: 25px 0 30px;
+	}
+	> #copyright {
+		background-color: rgba(255, 255, 255, 0.8);
+		color: #4a4a4a;
+		font-size: 14px;
+		text-align: center;
+		padding: 20px 0 55px;
+		@include clearfix;
+
+		#developed-by {
+			float: right;
+		}
+	}
+}

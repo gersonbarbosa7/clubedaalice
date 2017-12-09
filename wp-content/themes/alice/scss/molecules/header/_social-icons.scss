@@ -1,0 +1,38 @@
+body {
+	> header,
+	> footer {
+		.social-icons {
+			@include make-sm-column(2);
+			text-align: center;
+			margin-top: 40px;
+
+			@media screen and (max-width: 440px) {
+    			margin-top: 15px !important;
+			}
+
+			> li {
+				display: inline-block;
+
+				a {
+					display: block;
+					border-radius: 50%;
+					background-color: #54c2c9;
+					width: 32px;
+					height: 32px;
+					line-height: 35px;
+					text-align: center;
+					transition: all 0.5s linear;
+
+					> i {
+						color: #fff;
+						font-size: 17px;
+					}
+
+					&:hover {
+						background-color: #e1367f;
+					}
+				}
+			}
+		}
+	}
+}

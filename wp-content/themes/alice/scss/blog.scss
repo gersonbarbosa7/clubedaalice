@@ -1,0 +1,10 @@
+@import "organisms/blog";
+@import "bosons/mixins";
+
+body {
+	border-top: 3px solid $azul;
+}
+
+main {
+	background: rgba(255, 255, 255, 0.4);
+}

@@ -1,0 +1,14 @@
+@import "bosons/fonts";
+.post-info {
+	margin-top: 10px;
+	overflow: hidden;
+	font: 300 12px $light_font;
+	color: #434343;
+	img {
+		margin-right: 15px;
+		width: 52px;
+	}
+	.views {
+		float: right;
+	}
+}

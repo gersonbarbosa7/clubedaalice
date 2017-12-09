@@ -1,0 +1,89 @@
+@import "bosons/fonts";
+
+#content-page {
+	#sidebar {
+		.widget {
+			.widget-content {
+				img {
+					@include img-responsive;
+				}
+			}
+			&.widget-publicidade {
+				a {
+					display: block;
+					margin-bottom: 15px;
+				}
+			}
+			&.widget-mais-lidas {
+				.widget-content {
+					background-color: #fff;
+					border: 1px solid #d7d7d7;
+					padding: 25px;
+
+					ul {
+						li {
+							padding-bottom: 20px;
+							margin-bottom: 20px;
+							border-bottom: 1px solid #d7d7d7;
+
+							.number {
+								display: inline-block;
+								color: #b2b2b2;
+								font: 50px $light_font;
+								width: 15%;
+								text-align: center;
+							}
+
+							a {
+								display: inline-block;
+								width: 75%;
+								color: #434343;
+								text-transform: uppercase;
+								font-size: 14px;
+								line-height: 1.2;
+							}
+
+							* {
+								transition: all 0.5s linear;
+							}
+
+							&:hover {
+								a, .number {
+									color: #e1367f;
+								}
+							}
+						}
+						:last-child {
+							margin-bottom: 0;
+							padding-bottom: 0;
+							border: none;
+						}
+					}
+				}
+			}
+			&.widget-posts-relacionados {
+				.posts {
+					* {
+						text-transform: uppercase;
+					}
+					.categoria {
+						display: block;
+						margin: 20px 0 10px;
+						font: bold 12px $medium_font;
+						color: #64c8c6;
+					}
+					h3 {
+						a {
+							display: block;
+							color: #393939;
+							width: 70%;
+							line-height: 2;
+							margin-bottom: 20px;
+							font: bold 17px $medium_font;
+						}
+					}
+				}
+			}
+		}
+	}
+}

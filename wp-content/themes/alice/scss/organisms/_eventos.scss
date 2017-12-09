@@ -1,0 +1,61 @@
+@import "../vendor/bootstrap-sass/assets/stylesheets/bootstrap/mixins";
+@import "../vendor/bootstrap-sass/assets/stylesheets/bootstrap/variables";
+
+@import "molecules/eventos/datas";
+@import "molecules/eventos/dados-do-evento";
+@import "bosons/fonts";
+
+.evento {
+	header {
+		h2 {
+			margin: 50px 0 30px;
+			font-size: 31px;
+			color: #54c2c9;
+			text-transform: uppercase;
+		}
+	}
+
+	.main {
+		padding-bottom: 20px;
+		h5 {
+			margin: 10px 0 20px;
+			color: #000;
+			font: 12px $medium_font;
+		}
+		@media screen and (max-width: 740px) {
+			img {
+				@include img-responsive
+			}
+		}
+		@media screen and (max-width: 440px) {
+			img {
+				@include img-responsive
+			}
+		}
+		#dados-do-evento {
+			margin: 20px 0 50px;
+			h3 {
+				font: 13px $medium_font;
+				text-transform: uppercase;
+				padding: 0 0 17px;
+				border-bottom: 4px solid rgba(0, 0, 0, 0.2);
+			}	
+		}
+		p {
+			color: #000;
+			font-style: 12px;
+		}
+		iframe {
+			margin: 0 auto;
+			display: table;
+			@media screen and (max-width: 480px) {
+				width: 100%;
+				min-width: 100%;
+			}
+		}
+	}
+
+	footer {
+		padding: 25px 0;
+	}
+}

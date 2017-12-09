@@ -1,0 +1,293 @@
+.menu-principal {	
+    position: relative;
+	background: url('../images/fundo-menu-rosa.png') top center repeat-x;
+	margin: 0 0 -6px;
+	z-index: 9999 !important;
+	.container {
+		position: relative;
+	}
+	ul {
+		text-align: center;
+		li {
+			display: inline-block;
+			a {
+				position: relative;
+				display: block;
+				color: white;
+				padding: 15px 15px 15px 45px;
+				text-transform: uppercase;
+				@include transition(.4s);
+				&:hover {
+					img {
+						transform: rotate(360deg);
+					}
+				}
+				img {
+					position: absolute;
+					top: 4px;
+					left: 0;
+					@include transition(.4s);
+					width: 40px;
+					height: auto;			
+				}
+				img.cestinha {
+					top: -3px;
+					width: 21px;
+					height: auto;
+				}
+			}
+			&.current-menu-item {
+				a {
+					background: url('../images/fundo-menu-azul-hover.png') top center repeat-x;
+					img {
+						transform: rotate(360deg);
+					}
+				}
+			}
+		}
+	}
+}
+
+.selos {
+	a {
+		&:hover {
+			background: url('../images/fundo-menu-rosa-hover.png') top center repeat-x;
+		}
+	}
+}
+
+.menu-responsivo {
+	text-transform: uppercase;
+	padding: 15px 12px 15px 12px !important;
+	&:hover {
+		cursor: pointer;
+		background: url('../images/fundo-menu-rosa-hover.png') top center repeat-x;
+	}				
+}
+.ativo {
+	background: url('../images/fundo-menu-azul.png') top center repeat !important;
+}	
+
+.menu-blog {
+	ul {
+		text-align: left !important;
+		@include clearfix;
+		li {
+			a {
+				padding: 15px 8px;	
+				font-size: 14px;
+				line-height: 18px;
+				text-transform: initial;					
+			}		
+		}
+		.anunciantes {			
+			float: right;
+			a {
+				background: url('../images/fundo-menu-rosa-hover.png') top center repeat-x !important;
+				text-transform: uppercase;
+				padding: 14px;
+				img {
+					position: relative !important;
+					vertical-align: center !important;
+				}					
+			}				
+		}
+	}
+}
+
+.menu-categorias {
+    position: relative;
+    z-index: 99;
+    left: 0;
+    width: 100%;
+    margin: 0 0 12px;
+
+    ul {
+    	margin: -7px 0;
+    	background: url('../images/fundo-menu-azul.png') top center repeat !important;
+		li {
+			display: inline-block;		
+			.menu-responsivo {
+				&:hover {
+					background: url('../images/fundo-menu-azul-hover.png') top center repeat !important;
+				}					
+			}
+			.ativo {
+				background: url('../images/fundo-menu-azul-hover.png') top center repeat !important;
+			}
+			a {
+				&:hover {
+					background: url('../images/fundo-menu-azul-hover.png') top center repeat !important;
+				}				
+				padding: 15px 8px !important;	
+				font-size: 14px;
+				line-height: 18px;
+				text-transform: initial;					
+			}			
+		}    	
+    }
+}
+
+/* iPhone and other smartphones (landscape) */
+@media screen and (max-width: 480px) {
+	.menu-principal {
+		@include make-row;
+		background: url('../images/fundo-menu-rosa.png') top center repeat;
+		ul {
+			li {
+				display: inline-block;
+				a {
+					background: url('../images/fundo-menu-rosa.png') top center repeat-x;
+					img {
+						width: 30px;
+						height: auto;
+					}
+				}
+			}
+		}
+	}
+	.menu-blog {
+		ul {
+			li {
+				a {
+					text-align: center !important;
+				}
+			}
+			.anunciantes {
+				float: none
+			}
+		}
+		.ativo {
+			background: url('../images/fundo-menu-azul-hover.png') top center repeat !important;
+		}
+	}
+	.menu-categorias {
+		width: 100%;
+		li {
+			display: block !important;
+		}
+	    ul {
+	    	background: url('../images/fundo-menu-azul.png') top center repeat !important;
+			li {	
+				.menu-responsivo {
+					&:hover {
+						background: url('../images/fundo-menu-azul-hover.png') top center repeat !important;
+					}					
+				}
+				a {
+					&:hover {
+						background: url('../images/fundo-menu-azul-hover.png') top center repeat !important;
+					}								
+				}			
+			}    	
+	    }
+	}
+}
+
+/* intermediário */
+@media screen and (max-width: 991px) {
+	.menu-principal {
+		ul {
+			li {
+				display: inline-block;
+				a {
+					padding: 15px 10px 15px 65px;
+				}
+			}
+		}
+	}
+	.menu-blog {
+		ul {
+			li {
+				a {
+					text-align: center !important;
+				}
+			}
+			.anunciantes {
+				float: none
+			}
+		}
+		.ativo {
+			background: url('../images/fundo-menu-azul-hover.png') top center repeat !important;
+		}
+	}
+	.menu-categorias {
+		width: 100%;
+		li {
+			display: block !important;
+		}
+	    ul {
+	    	background: url('../images/fundo-menu-azul.png') top center repeat !important;
+			li {	
+				.menu-responsivo {
+					&:hover {
+						background: url('../images/fundo-menu-azul-hover.png') top center repeat !important;
+					}					
+				}
+				a {
+					&:hover {
+						background: url('../images/fundo-menu-azul-hover.png') top center repeat !important;
+					}								
+				}			
+			}    	
+	    }
+	}
+
+
+}
+
+/* iPad and other tablets (portrait) */
+@media screen and (max-width: 768px) {
+	.menu-principal {
+		@include make-row;
+		background: url('../images/fundo-menu-rosa.png') top center repeat;
+		ul {
+			li {
+				display: inline-block;
+				a {
+					background: url('../images/fundo-menu-rosa.png') top center repeat-x;
+					img {
+						width: 40px;
+						height: auto;
+					}
+				}
+			}
+		}
+	}
+	.menu-blog {
+		ul {
+			li {
+				a {
+					text-align: center !important;
+				}
+			}
+			.anunciantes {
+				float: none;
+			}
+		}
+		.ativo {
+			background: url('../images/fundo-menu-azul-hover.png') top center repeat !important;
+		}
+	}
+	.menu-categorias {
+		width: 100%;
+		li {
+			display: block !important;
+		}
+	    ul {
+	    	background: url('../images/fundo-menu-azul.png') top center repeat !important;
+			li {	
+				.menu-responsivo {
+					&:hover {
+						background: url('../images/fundo-menu-azul-hover.png') top center repeat !important;
+					}					
+				}
+				a {
+					&:hover {
+						background: url('../images/fundo-menu-azul-hover.png') top center repeat !important;
+					}								
+				}			
+			}    	
+	    }
+	}
+}

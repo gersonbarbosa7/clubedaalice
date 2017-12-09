@@ -1,0 +1,67 @@
+footer {
+	#menus-do-rodape {
+		width: 100%;
+
+		ul {
+			text-align: left;
+
+			> li {
+				display: inline-block;
+
+				> a {
+					display: block;
+					color: #fff;
+					font-size: 13px;
+					padding: 10px 0;
+					margin-right: 20px;
+					text-transform: uppercase;
+					@include transition(.5s);
+				}
+
+				&.current-menu-item {
+					> a {
+						color: #54c2c9;
+					}
+				}
+			}
+
+			> :last-child > a {
+				margin-right: 0;
+			}
+
+			&.categorias > li.current-menu-item > a {
+				color: #e1367f;
+			}
+		}
+	}
+	.last {
+		padding:  0 0 20px;
+	}
+}
+
+
+/* iPhone and other smartphones (landscape) */
+@media screen and (max-width: 480px) {
+	footer {
+		#menus-do-rodape {
+			ul {
+				> li {
+					display: block;
+					text-align: center;
+					> a {
+						margin: 5px !important;
+					}
+				}
+			}
+			h3 {
+				display: block;
+				padding: 0 0 14px !important;
+				border-bottom: 3px solid #3E3E3E;
+			}
+		}
+		img {
+			display: table;
+			margin: 0 auto;
+		}
+	}
+}

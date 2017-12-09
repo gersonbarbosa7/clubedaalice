@@ -1,0 +1,15 @@
+a.read-more {
+	display: inline-block;
+	padding: 0 15px;
+	height: 40px;
+	line-height: 40px;
+	background-color: #54c2c9;
+	text-align: center;
+	font-size: 14px;
+	color: #fff;
+	transition: all 0.5s linear;
+
+	&:hover {
+		background-color: #e1367f;
+	}
+}

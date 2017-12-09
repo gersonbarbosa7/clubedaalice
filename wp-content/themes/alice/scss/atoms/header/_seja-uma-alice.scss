@@ -1,0 +1,49 @@
+body {
+	> header {
+		#seja-uma-alice {
+			display: block;
+			@include make-sm-column(3);
+			@include make-sm-column-offset(2);
+			text-align: right;
+			transition: all 0.5s linear;
+
+			> img {
+				@include img-responsive;
+				margin-top: 20px;
+				float: right;
+			}
+
+			&:hover {
+				opacity: 0.9;
+			}
+		}
+	}
+}
+
+/* iPhone and other smartphones (landscape) */
+@media screen and (max-width: 480px) {
+	body {
+		> header {
+			#seja-uma-alice {
+				> img {
+					float: none;
+					margin: 0 auto;
+				}
+			}
+		}
+	}
+}
+
+/* iPad and other tablets (portrait) */
+@media screen and (max-width: 768px) {
+	body {
+		> header {
+			#seja-uma-alice {
+				> img {
+					float: none;
+					margin: 0 auto;
+				}
+			}
+		}
+	}
+}

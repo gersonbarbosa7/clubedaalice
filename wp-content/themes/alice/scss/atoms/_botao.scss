@@ -1,0 +1,9 @@
+.botao {
+	border: 0;
+	background: url(../images/fundo-menu-rosa.png) top center repeat;
+	color: $branco;
+	padding: 14px;
+	&:hover {
+		background: url(../images/fundo-menu-rosa-hover.png) top center repeat;
+	}
+}

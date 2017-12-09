@@ -1,0 +1,111 @@
+.box-parceiro {
+	@include make-md-column(4);
+	@include make-sm-column(4);
+	margin-bottom: 35px;
+	min-height: 425px;
+
+	> a {
+		display: block;
+		> img {
+			@include img-responsive;
+			width: 100%;
+		}
+	}
+
+	> .box-thumb {
+		display: block;
+	    height: 165px;
+	    overflow: hidden;	
+		> img {
+			@include img-responsive;
+		}
+	}
+
+	> .box-content {
+		padding: 20px 20px 0px;
+		background-color: #ebebeb;
+
+		> hgroup {
+			margin-bottom: 15px;
+
+			> h3 {
+				margin: 0 0 15px;
+				padding-bottom: 5px;
+				border-bottom: 4px solid #d3d3d3;
+				> a {
+					color: #54c2c9;
+					font: 16px $medium_font;
+					text-transform: uppercase;
+					min-height: 36px;
+					display: block;				
+				}
+			}
+
+			> h5 {
+				color: #434343;
+				font-size: 12px;
+				line-height: 1.2;
+				margin: 0;
+				text-transform: uppercase;
+			}
+		}
+
+		.desconto {
+			display: inline-block;
+		        width: 135px;
+    height: 45px;
+    line-height: 45px;
+		    font-size: 17px;
+		    float: right;
+		    position: relative;
+		    top: -5px;
+		    margin-bottom: 5px;
+		    border-radius: 15px;
+		    -webkit-border-radius: 15px;
+		    -moz-border-radius: 15px;
+		    font-weight: 300;
+		    font-family: 'Open Sans';
+
+		    strong {
+		    	font-weight: 600;
+		    	font-size: 19px;
+		    }
+
+		    @media screen and (max-width: 480px) { 
+		    	width: 105px;
+		    	font-size: 15px;
+		    }
+		    
+		}
+	}
+
+	> .anuncio-meta {
+		padding: 5px 20px;
+    	background: #ccc;
+    	color: #fff;
+    	margin-bottom: 3px;
+
+    	li {
+    		display: inline-block;
+    		width: 49%;
+    		color: #333;
+    		font-size: 12px;
+    		&:last-child {
+    			text-align: right;
+    		}
+    	}
+	}
+
+	> .anuncio-obs {
+		display: table-cell;
+		vertical-align: middle;
+		background: #333;
+	    color: #fff;
+	    font: 400 12px 'Open Sans';
+	    padding: 5px 20px;
+	    line-height: 1;
+	    height: 35px;
+	    overflow: hidden;
+	    width: 1200px;
+	}
+}

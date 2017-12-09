@@ -1,0 +1,24 @@
+.widget {
+	margin: 0 0 20px;
+	img {
+		@include img-responsive;
+		width: 100%;
+	}
+	.widget-content {
+		img {
+			@include img-responsive;
+			width: 100%;
+		}
+	}
+}
+
+.textwidget {
+	margin: 15px 0 0;
+}
+
+.adsbygoogle,
+.googlepublisherpluginad {
+	margin: 0 auto !important;
+	display: block;
+	height: 100%;
+}

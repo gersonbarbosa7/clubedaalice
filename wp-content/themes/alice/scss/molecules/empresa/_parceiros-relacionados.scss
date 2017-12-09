@@ -1,0 +1,70 @@
+#parceiros-relacionados,
+#detalhes-do-parceiro {
+
+	> header,
+	> .main {
+		@include make-row;
+	}
+
+	> header {
+		margin-top: 65px;
+		margin-bottom: 45px;
+
+		> hgroup {
+			@include make-sm-column(12);
+
+			> h5 {
+				margin: 0;
+				a {
+					color: #4fc1c9;
+					text-transform: uppercase;
+					font-style: 12px;
+				}
+			}
+			> h3 {
+				padding-bottom: 20px;
+				margin: 0;
+				border-bottom: 4px solid rgba(0, 0, 0, 0.1);
+				font: 21px $medium_font;
+				color: #e1367f;
+			}
+		}
+		
+	}
+}
+
+#detalhes-do-parceiro {
+	> header {
+		margin-top: 65px;
+		margin-bottom: 45px;
+		border-bottom: 4px solid rgba(0, 0, 0, 0.1);
+
+		> hgroup {
+			@include make-sm-column(10);
+			@include make-md-column(10);
+
+			> h3 {
+				border-bottom: none;
+			}
+		}
+
+		a.ir-para-descontos {
+			padding: 10px;
+			display: inline-block;
+			background: #e1367f;
+			color: #fff;
+			border-radius: 4px;
+			-webkit-border-radius: 4px;
+			-moz-border-radius: 4px;
+			float:  right;
+		}
+	}
+}
+
+@media screen and (max-width: 768px) {
+	a.ir-para-descontos {
+		display: table !important;
+		margin: 0 auto 20px !important;
+		float: none !important;
+	}
+}

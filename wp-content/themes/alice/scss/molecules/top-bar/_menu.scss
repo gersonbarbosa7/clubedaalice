@@ -1,0 +1,101 @@
+body {
+	#top-bar {
+		@include clearfix;
+		background: url('../images/fundo-menu-azul.png') top center repeat-x;
+		nav {
+			@include make-sm-column(9);
+			min-height: auto;
+			ul {
+				li {
+					display: inline-block;
+					a {
+						display: block;
+					    padding: 15px;	
+					    color: $branco;	
+					    @include transition(.4s);						
+						&:hover {
+							background: url('../images/fundo-menu-azul-hover.png') top center repeat-x;
+						}							
+					}
+
+					&.current-menu-item {
+						a {
+							background: url('../images/fundo-menu-azul-hover.png') top center repeat-x;
+						}
+					}
+				}
+			}
+			.responsivo {
+				position: relative;
+				li{
+					&:nth-child(1) {
+						position: absolute;
+						left: -15px;
+						top: 0;
+						a {
+							padding: 0 20px 0 0;
+							text-transform: uppercase;
+							background-color: rgba(0,0,0,.2);
+							border-radius: 120px;
+							font-weight: bold;
+						   	img {
+							    display: inline-block;
+							    width: 52px;
+							    vertical-align: middle;   		
+						   	}
+						}
+					}
+					&:nth-child(2) {
+						float: right;
+						a {
+							padding: 12px !important;
+						}
+					}
+
+				}			
+				a {				
+					i {
+						font-size: 25px;
+					}					
+				}			
+			}
+			.ativo {
+				background: url('../images/fundo-menu-rosa.png') top center repeat-x;
+			}			
+			.menu-dropdown {
+				position: absolute;
+				left: 0;
+				top: 49px;
+				width: 100%;
+				z-index: 999;
+				ul {
+					background: url('../images/fundo-menu-rosa.png') top center repeat;
+					text-align: center;
+					li {
+						display: block;
+						a {
+							&:hover {
+								background: url('../images/fundo-menu-rosa-hover.png') top center repeat-x;
+							}
+						}
+					}
+					.current-menu-item {
+						a {
+							background: url('../images/fundo-menu-rosa-hover.png') top center repeat-x !important;
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+/* iPhone and other smartphones (landscape) */
+@media screen and (max-width: 480px) {
+
+}
+
+/* iPad and other tablets (portrait) */
+@media screen and (max-width: 768px) {
+
+}

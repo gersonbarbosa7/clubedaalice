@@ -1,0 +1,22 @@
+.formulario {
+	background-color: $rosa;
+	padding: 12px;
+	@include border-radius(12px);
+	label {
+		color: $branco;
+	}
+	input {
+		@include border-radius(120px);	
+		border: 0;
+	}
+	.botao {
+		background: url('../images/fundo-menu-azul.png') top center repeat;
+		display: table;
+		margin: 0 auto;
+	}
+	.fundinho {
+		background-color: rgba(0,0,0,.2);
+		padding: 12px;
+		@include border-radius(12px);
+	}
+}

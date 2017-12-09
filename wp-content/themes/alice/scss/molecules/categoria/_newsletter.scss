@@ -1,0 +1,52 @@
+#newsletter {
+	margin-top: 43px;
+	padding: 5px;
+	background-color: #54c2c9;
+
+	> #newsletter-container {
+		padding: 20px 10px;
+		border: 2px dashed #3d9da3;
+
+		> hgroup {
+			margin-bottom: 20px;
+
+			> h2 {
+				color: #fff;
+				font: bold 16px $medium_font;
+				text-align: center;
+				margin: 0;
+				padding: 0;
+			}
+		}
+
+		> form {
+			> input,
+			> button {
+				border: none;
+				float: left;
+				height: 40px;
+				line-height: 40px;
+			}
+
+			> input {
+				width: 60%;
+				text-indent: 15px;
+				font-size: 14px;
+				color: #adadad;
+			}
+
+			> button {
+				width: 40%;
+				background-color: #e1367f;
+				text-align: center;
+				color: #fff;
+				font-size: 17px;
+				transition: all 0.5s linear;
+
+				&:hover {
+					background: rgba(0, 0, 0, 0.4);
+				}
+			}
+		}
+	}
+}

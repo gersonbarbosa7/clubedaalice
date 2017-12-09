@@ -1,0 +1,74 @@
+@import "../vendor/bootstrap-sass/assets/stylesheets/bootstrap/mixins";
+@import "../vendor/bootstrap-sass/assets/stylesheets/bootstrap/variables";
+
+@import "bosons/fonts";
+
+@import "molecules/eventos/datas";
+@import "molecules/eventos/dados-do-evento";
+@import "bosons/fonts";
+
+#empresas-subheader,
+#eventos-subheader {
+	padding: 0px 0 0;
+	background-color: #54c2c9;
+	background-repeat: no-repeat;
+	background-position: top center;
+	background-size: 100%;
+
+	@media screen and (max-width: 440px) {
+		padding: 0;
+	}
+
+
+	.botao {
+		position: relative;
+		display: block;
+		margin: 15px 0;
+		text-transform: uppercase;
+		&:hover,
+		&:focus {
+			color: #fff;
+		}
+		.fa {
+			position: absolute;
+			right: 10px;
+			top: 15px;
+		}
+	}
+	.botao.ativado {
+		.fa {
+			transform: rotate(180deg);
+		}
+	}
+
+	> header {
+		> hgroup {
+			@include make-row;
+
+			> h2,
+			> h5 {
+				@include make-sm-column(12);
+				color: #fff;
+				margin: 0;
+			}
+
+			> h2 {
+				font: bold 21px $medium_font;
+			}
+
+			> hr {
+				@include make-sm-column(12);
+				margin: 25px 0 0px;
+				border: none;
+				height: 4px;
+				width: 100%;
+				background-color: rgba(255, 255, 255, 0.4);
+				background-clip: content-box;
+				box-sizing: border-box;
+				@media screen and (max-width: 440px) {
+					margin: 12px 0 0px;
+				}
+			}
+		}
+	}
+}

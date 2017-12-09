@@ -1,0 +1,43 @@
+#slider {
+	@include make-row;
+
+	> #slider-container {
+		@include make-sm-column(12);
+		margin: 0 0 20px;
+
+		.item {
+			img {
+				@include img-responsive;
+			}
+		}
+
+		.owl-nav {
+			height: 0;
+			margin: 0;
+		}
+
+		.owl-prev,
+		.owl-next {
+			position: relative;
+			top: -210px;
+			width: 57px;
+			height: 110px;
+			background-color: transparent;
+			text-indent: -9999px;
+			@include transition(.2s);
+			&:hover {
+				background-position: 0 -112px;
+			}
+		}
+
+		.owl-prev {
+			background: url('../images/nav-ant.png') 0 0 no-repeat;
+			left: -50%;
+		}
+
+		.owl-next {
+			background: url('../images/nav-pos.png') 0 0 no-repeat;
+			right: -50%;
+		}
+	}
+}

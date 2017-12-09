@@ -1,0 +1,59 @@
+.single-post {
+	.share {
+		background-color: transparent;
+	}
+}
+
+.share {
+	@include clearfix;
+	text-align: center;
+
+	h5 {
+		margin-bottom: 0;
+	}
+    background-color: #E8E8E8;
+
+	li {
+		display: inline-block;
+		margin: 0 0 10px 0;
+
+		a {
+			display: block;
+			width: 50px;
+			height: 50px;
+			line-height: 55px;
+			border-radius: 50%;
+			border: 3px solid #64c8c6;
+			transition: all 0.3s linear;
+			text-align: center;
+			i {
+				color: #64c8c6;
+				font-size: 28px;
+			}
+
+			&:hover {
+				border-color: #e1367f;
+
+				i {
+					color: #e1367f;
+				}
+			}
+		}
+	}
+
+	&:last-child > a {
+		margin-right: 0;
+	}
+}
+
+.compartilhe {
+	margin: 0 0 30px;
+	background-color: #E8E8E8;
+	padding: 16px;
+	border-radius: 7px;
+	-webkit-wborder-radius: 7px;
+	-moz-border-radius: 7px;
+	h5 {
+		margin: 0 0 10px;
+	}
+}

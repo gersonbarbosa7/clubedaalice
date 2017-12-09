@@ -1,0 +1,11 @@
+@import "molecules/top-bar/menu";
+@import "molecules/top-bar/form";
+
+body {
+	> #top-bar {
+		background-color: #54c2c9;
+		> .bg-border {
+			border-color: #3d9da3;
+		}
+	}
+}

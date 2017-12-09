@@ -1,0 +1,61 @@
+@import "../vendor/bootstrap-sass/assets/stylesheets/bootstrap/mixins";
+@import "../vendor/bootstrap-sass/assets/stylesheets/bootstrap/variables";
+
+@import "bosons/fonts";
+
+#vantagens {
+	padding: 35px 0 30px;
+	background-color: #4fc1c9;
+
+	section {
+		@include make-row;
+
+		header,
+		.main {
+			@include make-sm-column(12);
+		}
+
+		header {
+			h3 {
+				font: 21px $medium_font;
+				color: #fff;
+				text-align: center;
+				text-transform: uppercase;
+				margin: 0 0 30px;
+				padding-bottom: 25px;
+				border-bottom: 4px solid rgba(255, 255, 255, 0.2);
+			}
+		}
+
+		.main {
+			.vantagens-alice {
+				text-align: center;
+				.item {
+					display: inline-block;
+					vertical-align: top;
+					width: 200px;
+					margin: 0 10px;
+					font-size: 13px;
+					text-transform: initial;
+					color: #fff;
+					
+					@media screen and (max-width: 480px) {
+						width: 140px;
+					}
+
+
+					h4 {
+					    text-align: center;
+					    font-size: 16px
+					   }
+					img {
+					    width: 60px;
+					    height: 60px;
+						display: table;
+						margin: 10px auto;
+					}
+				}
+			}
+		}
+	}
+}

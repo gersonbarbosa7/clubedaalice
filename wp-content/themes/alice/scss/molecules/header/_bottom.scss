@@ -1,0 +1,68 @@
+.bottom.hover {
+	@include opacity(0.8);
+}
+
+.descontos-topo {
+	@include  make-xs-column(6);
+	float: right;
+	a {
+		padding: 20px 0 0 !important;
+		display: block;
+		img {
+			@include img-responsive;
+		}
+	}
+}
+
+.bottom {
+	@include make-sm-column(3);
+	@include make-sm-column-offset(2);
+	display: table;
+	margin: 30px auto;
+	text-align: center;
+	background: url('../images/alice-bottom-fundo.png') 47px 7px no-repeat;
+	@include clearfix;
+	@include transition(.3s);
+	&:hover {
+		background-position: 39px 7px;
+		.imagem {
+			transform: rotate(360deg);
+		}
+	}
+	.chamada {
+	    float: left;
+	    margin: 2px 16px 0 84px;
+	    line-height: 0px;
+	    text-align: center;
+		color: $branco;
+		h2 {
+			font-size: 15px;
+			margin: 20px 0 0;
+		}
+		p {
+			font-size: 21px;
+		}
+	}
+	.imagem {
+		@include transition(.5s);
+		float: right;
+	}
+}
+
+.bottom-responsivo {
+	img {
+		display: table;
+		margin: 0 auto;
+	}
+}
+@media screen and (max-width: 1200px) {
+	.bottom {
+		background-position: 16px 7px;
+		&:hover {
+			background-position: 12px 7px;
+		}
+		.chamada {
+			margin: 0px 3px 0 30px;
+		}
+	}
+}

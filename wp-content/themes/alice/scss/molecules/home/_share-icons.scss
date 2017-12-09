@@ -1,0 +1,33 @@
+#posts {
+	article {
+		> footer {
+			.share-icons {
+				display: inline-block;
+				float: right;
+
+				> li {
+					display: inline-block;
+
+					> a {
+						display: block;
+						height: 40px;
+						line-height: 40px;
+						margin-right: 10px;
+
+						> i {
+							color: #989898;
+							font-size: 16px;
+						}
+
+						&:hover {
+							> i {
+								color: #e1367f;
+							}
+						}
+					}
+				}
+			}
+			
+		}
+	}
+}

@@ -1,0 +1,40 @@
+body {
+	> #main-nav {
+		#button-seja-uma-alice {
+			@include make-sm-column(3);
+			height: 38px;
+			> .button-container {
+				position: relative;
+				top: -4px;
+
+				> a {
+					padding: 4px 0;
+					font-size: 16px;
+					color: #fff;
+					text-align: center;
+					transition: all 0.5s linear;
+
+					> span.border {
+						display: block;
+						height: 46px;
+						line-height: 46px;
+						padding: 0 15px;
+						background-color: rgba(0, 0, 0, 0.2);
+
+						> img {
+							position: relative;
+							top: -3px;
+							margin-right: 10px;
+						}
+					}
+
+					&:hover {
+						> span.border {
+							background-color: rgba(0, 0, 0, 0.1);
+						}
+					}
+				}
+			}
+		}
+	}
+}

@@ -1,0 +1,16 @@
+.fb-comments {
+	padding: 45px 100px;
+	border: 1px solid #d7d7d7;
+	@media screen and (max-width: 440px) {
+		padding: 20px;
+	}
+	&, & > span {
+		width: 100% !important;
+		background-color: #fff;	
+	}
+}
+
+#fbcomments, .fb-comments, 
+.fb-comments iframe[style], .fb-comments span {
+	width: 100% !important;
+}

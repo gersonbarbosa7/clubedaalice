@@ -1,0 +1,54 @@
+#dados-de-contato {
+	li {
+		margin: 0 0 15px;
+		font: 14px $medium_font;
+		color: #922252;
+		text-transform: initial;
+		@include clearfix;
+		display: block !important;
+		width: 100% !important;
+
+		@media screen and (max-width: 768px) {
+			&.endereco {
+				height: 65px;
+			}
+		}
+
+		&:fist-child,
+		&:last-child {
+			margin: 0 !important;
+			padding: 0 !important;
+			@include make-sm-column(12);
+		}
+	
+		.dados {
+			float: left;
+		}
+
+		.icone {
+			float: left;
+			height: 40px;
+			line-height: 45px;
+			width: 40px;
+			text-align: center;
+			border-radius: 50%;
+			background-color: #e1367f;
+			margin-right: 10px;
+
+			> i {
+				font-size: 13px;
+				color: #fff;
+			}
+		}
+
+		address {
+			display: inline-block;
+			margin: 0;
+		}
+
+		a {
+			color: #922252;
+			font: 14px $medium_font;
+		}
+	}
+}

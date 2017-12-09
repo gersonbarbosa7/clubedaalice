@@ -1,0 +1,33 @@
+section#alice-na-midia {
+	.main {
+		#alice-na-midia__container {
+			@include make-sm-column(8);
+			@include make-sm-column-offset(2);
+
+			.item {
+				height: 80px;
+				line-height: 80px;
+				
+				img {
+					margin: 0 auto;
+					width: auto;
+				}
+			}
+		}
+	}
+	.owl-dot.active {
+		span {
+			background-color: $rosa;
+		}
+	}
+	.owl-dot {
+		span {
+			@include transition(.4s);
+		}
+		&:hover {
+			span {
+				background-color: $azul;
+			}
+		}
+	}
+}

@@ -1,0 +1,145 @@
+@import "../vendor/bootstrap-sass/assets/stylesheets/bootstrap/mixins";
+@import "../vendor/bootstrap-sass/assets/stylesheets/bootstrap/variables";
+
+@import "atoms/home/read-more";
+@import "molecules/empresas/parceiros";
+@import "molecules/empresa/dados-de-contato";
+@import "bosons/mixins";
+@import "molecules/pagination";
+
+#listagem {
+
+	> header,
+	> .main {
+		@include make-row;
+		#banner_destaque {
+			@include make-sm-column(12);
+			margin: 0 0 20px;
+		}
+	}
+
+	#dados-de-contato {
+		margin: 10px 0 0 40px;
+	}
+
+	.destaque {
+		display: flex;
+		@include clearfix;
+		display: block;
+		margin-bottom: 30px;
+		.read-more {
+			float: right;
+		}
+		.box-thumb {
+			@include make-sm-column(5);
+			position: relative;	
+			img {
+				@include img-responsive;
+				width: 100%;
+			}			
+			.logo {
+				position: absolute;
+			    top: 31px;
+			    right: -24px;
+				z-index: 1;
+				overflow: hidden;
+				@include border-radius(120px);
+				img {
+					width: 85px;
+					height: 85px;
+				}
+			}
+		}
+
+		.box-content {
+			@include make-sm-column(7);
+			@include make-row;
+			hgroup {
+				margin-left: 40px;
+			}			
+			padding: 30px 30px 15px;
+			background-color: #ebebeb;
+
+			> hgroup {
+				margin-bottom: 15px;
+
+				> h3 {
+					margin: 0 0 15px;
+					padding-bottom: 15px;
+					border-bottom: 4px solid #d3d3d3;
+					> a {
+						color: #54c2c9;
+						font: 16px $medium_font;
+						text-transform: uppercase;
+					}
+				}
+
+				> h5 {
+					color: #434343;
+					font-size: 12px;
+					line-height: 1.2;
+					margin: 0;
+					text-transform: uppercase;
+				}
+			}
+		}
+
+	}
+
+	> header {
+		> h2 {
+			@include make-sm-column(12);
+			padding: 20px;
+			margin: 0;
+			font-size: 24px;
+			color: #000;
+
+			> strong {
+				font-family: $medium_font;
+				text-transform: uppercase;
+			}
+		}
+	}
+}
+
+/* iPhone and other smartphones (landscape) */
+@media screen and (max-width: 480px) {
+	.destaque {
+		.box-thumb {
+			.logo {
+				top: 201px !important;
+				bottom: -24px;
+				left: 30px;
+				overflow: hidden;
+				@include border-radius(120px);
+			}
+		}
+
+		.box-content {
+			margin: 0 15px !important;
+			hgroup {
+				margin: 10px !important;
+			}				
+		}
+	}
+}
+
+/* iPad and other tablets (portrait) */
+@media screen and (max-width: 768px) {
+	.destaque {
+		.box-thumb {
+			.logo {
+				top: 201px !important;
+				bottom: -24px;
+				left: 30px;
+			}
+		}
+
+		.box-content {
+			margin: 0 15px !important;
+			hgroup {
+				margin: 10px !important;
+			}				
+		}
+	}
+}

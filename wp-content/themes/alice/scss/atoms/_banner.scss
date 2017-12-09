@@ -1,0 +1,26 @@
+.banner-container {
+	@include make-row;
+	.banner {
+		@include make-sm-column(8);
+		@include make-sm-column-offset(2);
+		padding: 0;
+		display: block;
+		margin: 30px auto 20px auto;
+		a {
+			display: block;
+
+			> img {
+				@include img-responsive;
+				width: 100%;
+			}
+		}
+	}
+}
+
+@media screen and (max-width: 450px ) {
+	.banner-container {
+		.banner {
+			margin: 10px auto 10px auto;
+		}
+	}	
+}

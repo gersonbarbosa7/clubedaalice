@@ -1,0 +1,11 @@
+#footer-bottom {
+	#description {
+		@include make-sm-column(8);
+		font-size: 13px;
+		text-transform: initial;
+		text-align: justify;
+		color: #fff;
+		padding-top: 20px;
+		line-height: 18px;
+	}
+}

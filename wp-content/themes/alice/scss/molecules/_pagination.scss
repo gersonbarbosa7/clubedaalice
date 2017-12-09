@@ -1,0 +1,42 @@
+//original selectors
+//.pagination a, .pagination span
+%extend_36 {
+	float: left;
+	margin: 2em 11px 0 0;
+	width: 45px;
+	height: 45px;
+	line-height: 40px;
+	color: #fff;
+	text-align: center;
+	font-weight: bold;
+	font-size: 1.1em;
+	border-radius: 3px;
+}
+.wp-pagenavi {
+	position: relative;
+	z-index: 1;
+	float: left;
+	overflow: hidden;
+	a {
+		@extend %extend_36;
+
+		display: block;
+		border: none;
+		background-color: #54c2c9;
+		transition: 0.5s;
+
+		&:hover{
+			background-color: #e1367f;
+		}
+	}
+	span {
+		@extend %extend_36;
+		width: 45px;
+		height: 45px;
+		line-height: 40px;
+		border: none;
+		background-color: #e1367f;
+		color: #fff;
+		border-radius: 3px;
+	}
+}

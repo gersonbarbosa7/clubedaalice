@@ -1,0 +1,8 @@
+#footer-bottom {
+	#logo-rodape {
+		@include make-sm-column(2);
+		img {
+			@include img-responsive;
+		}
+	}
+}
