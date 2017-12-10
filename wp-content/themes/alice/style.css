@@ -21,3 +21,47 @@ Version: 1.0.0
 .link_terms{color:#d63881;}
 .logado a{color:#e22a7d !important;display:inline-block;}
 .logado img{display:inline-block;margin-left:10px;}
+.rosa{color:#e32c7f;margin-bottom:40px;}
+.stepwizard-step p {margin-top: 10px;}
+.stepwizard-row {display: table-row;}
+.stepwizard {display: table;width: 100%;position: relative;}
+.stepwizard-step button[disabled] {opacity: 1 !important;filter: alpha(opacity=100) !important;}
+.stepwizard-row:before {top: 14px;bottom: 0;position: absolute;content: " ";width: 100%;height: 1px;background-color: #ccc;z-order: 0;}
+.stepwizard-step {display: table-cell;text-align: center;position: relative;}
+.btn-circle {width: 30px;height: 30px;text-align: center;padding: 6px 0;font-size: 12px;line-height: 1.428571429;border-radius: 50%;}
+.bgcircle{background-color: #49c6cd !important;border-color: #49c6cd !important;}
+.btn-circle{border-radius:50% !important;}
+.bgpadrao{background-color: #bdbdbd !important;}
+#minhaconta{background-color: #fbfbfb;border-top: 1px solid #f0f0f0;border-bottom: 1px solid #f0f0f0;padding-top:30px;}
+.h3fcb{font-weight: bold;font-size: 20px;color:#4e6ab2;}
+.lista-btns button{margin-bottom:20px;padding:15px 22px !important;border-radius:100px;width:100%;}
+.form-dados h3{font-size:25px;margin-bottom:40px;font-weight:bold;color:#49c6cd;}
+.form-dados input[type=text], .form-dados input[type=email], .form-dados, .form-dados input[type=tel]{padding:20px !important;border-color:#49c6cd;border-radius:100px;font-size:20px;}
+.form-dados ::-webkit-input-placeholder {text-align: center;}
+.form-dados :-moz-placeholder { /* Firefox 18- */ text-align: center;}
+.form-dados ::-moz-placeholder {  /* Firefox 19+ */ text-align: center;}
+.form-dados :-ms-input-placeholder {text-align: center;}
+.form-dados input[type=text], .form-dados input[type=email], .form-dados input[type=tel], .form-dados select{padding:30px 15px !important;}
+#carteirinhas{margin-top:40px;}
+#carteirinhas h2{color:#e32d7f;margin-bottom: 30px;}
+.alert-pink{background-color: #e32d7f !important;color:#fff !important;padding-bottom:40px !important;}
+.alert-pink h3{font-size:25px;font-weight:bold;}
+.button-pink{background-color: #e32d7f !important;color:#fff;width: 100%; color:#fff !important; border-color: #e32d7f !important; padding-top: 18px !important; padding-bottom: 18px !important; }
+.line-pink h4{font-size:25px;padding:15px 0 15px 0;color:#e32d7f;font-weight:bold;}
+.title_pink{font-size:25px;margin-top: 0;color:#e32d7f;font-weight:bold;}
+.line-pink{margin-bottom: 30px;}
+
+.alert-black{background-color: #000 !important;color:#fff !important;padding-bottom:40px !important;}
+.alert-black h3{font-size:25px;font-weight:bold;}
+.button-black{background-color: #000 !important;color:#fff;width: 100%; color:#fff !important; border-color: #000 !important; padding-top: 18px !important; padding-bottom: 18px !important; }
+.line-black h4{font-size:25px;padding:15px 0 15px 0;color:#000;font-weight:bold;}
+.fullimg{width: 100%;}
+.imgcartao{cursor: pointer;}
+.btn-alice{border-radius:100px !important;padding:10px 30px !important}
+.form-dados input{text-align: center;}
+.custo{font-size:35px;font-weight:bold}
+.cifrao, .centavos{color:#d62a7a;font-size:20px;}
+.preco{color:#d62a7a;font-size:60px;vertical-align:middle;font-weight:bold;}
+.dadoscliente{margin-top: 40px;}
+.left0{padding-left: 0 !important;}
+.right0{padding-right: 0px !important;}

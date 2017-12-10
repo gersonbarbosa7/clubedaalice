@@ -56,7 +56,7 @@
                                  
                             <ul id="login_topo" class="logado">
                                     <li>
-                                        <a href="javascript:void(0)">Minha conta</a> 
+                                        <a href="<?php echo home_url(); ?>/minha-conta">Minha conta</a> 
                                         <img src="<?php echo get_template_directory_uri(); ?>/images/icone-logado.png" class="img-responsive" />
                                     </li>                                                                                                       
                                 </ul>

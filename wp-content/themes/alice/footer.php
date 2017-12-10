@@ -60,6 +60,7 @@
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="<?php echo get_template_directory_uri(); ?>/js/mascaras.js"></script>
 	<?php 
 		wp_footer();
 	?>			
@@ -110,6 +111,24 @@
 			    	$("#top-bar").sticky({topSpacing:0});
 			    <?php endif; ?>
 		    }
+                    //by Gerson
+                    $("#cartao1").click(function(){
+                        $(this).hide();
+                        $(".imgcheck2").hide();                        
+                        $(".imgcheck1").show();
+                        $("#cartao2").show();
+                        $("#carteirinha").val('pink');
+                    });
+                    $("#cartao2").click(function(){
+                        $(this).hide();
+                        $(".imgcheck1").hide();                        
+                        $(".imgcheck2").show();
+                        $("#cartao1").show();
+                        $("#carteirinha").val('black');
+                    });
+                    
+     
+                    
 		});
 
 		$(window).resize(function() {
@@ -120,7 +139,10 @@
 			    	$("#top-bar").sticky({topSpacing:0});
 			    <?php endif; ?>
 		    }
-		})
+		});    
+                
+                
+
 	</script>
 </body>
 </html>
