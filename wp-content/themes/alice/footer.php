@@ -51,6 +51,15 @@
 			</div>
 		</div>	
 	</footer>
+
+
+<?php 
+        get_template_part('includes/modules/module', 'modals');
+        //get_template_part('includes/modules/module', 'midia');
+?>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 	<?php 
 		wp_footer();
 	?>			
