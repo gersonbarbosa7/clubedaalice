@@ -1,7 +1,7 @@
 /*
 Theme Name: Clube da Alice
 Theme URI: http://www.clubedaalice.com.br
-Author: Plug! Agência Web
+Author: Plug! AgÃªncia Web
 Author URI: http://www.plug.ag
 Version: 1.0.0
  */
@@ -36,7 +36,8 @@ Version: 1.0.0
 .h3fcb{font-weight: bold;font-size: 20px;color:#4e6ab2;}
 .lista-btns button{margin-bottom:20px;padding:15px 22px !important;border-radius:100px;width:100%;}
 .form-dados h3{font-size:25px;margin-bottom:40px;font-weight:bold;color:#49c6cd;}
-.form-dados input[type=text], .form-dados input[type=email], .form-dados, .form-dados input[type=tel]{padding:20px !important;border-color:#49c6cd;border-radius:100px;font-size:20px;}
+.h4green{color:#49c6cd;}
+.form-dados input[type=text], .form-dados input[type=email], .form-dados, .form-dados input[type=tel], .form-dados select{padding:20px !important;border-color:#49c6cd;border-radius:100px;font-size:20px;}
 .form-dados ::-webkit-input-placeholder {text-align: center;}
 .form-dados :-moz-placeholder { /* Firefox 18- */ text-align: center;}
 .form-dados ::-moz-placeholder {  /* Firefox 19+ */ text-align: center;}
@@ -50,7 +51,6 @@ Version: 1.0.0
 .line-pink h4{font-size:25px;padding:15px 0 15px 0;color:#e32d7f;font-weight:bold;}
 .title_pink{font-size:25px;margin-top: 0;color:#e32d7f;font-weight:bold;}
 .line-pink{margin-bottom: 30px;}
-
 .alert-black{background-color: #000 !important;color:#fff !important;padding-bottom:40px !important;}
 .alert-black h3{font-size:25px;font-weight:bold;}
 .button-black{background-color: #000 !important;color:#fff;width: 100%; color:#fff !important; border-color: #000 !important; padding-top: 18px !important; padding-bottom: 18px !important; }
@@ -65,3 +65,20 @@ Version: 1.0.0
 .dadoscliente{margin-top: 40px;}
 .left0{padding-left: 0 !important;}
 .right0{padding-right: 0px !important;}
+.custom-radio{margin-right:10px;background-color:#2e8e93 !important;border-radius:100px !important;border-color:#2e8e93 !important;opacity: 0.7;padding-top: 15px !important;padding-bottom: 15px !important;margin-bottom: 10px !important;}
+.radio-ativo{opacity:1}
+.fullradio, .fullradio .radio-group, .fullradio label{width:100%;}
+.text-center img{display:inline-block;}
+.desc_entrega{font-size: 12px;color:#2f8d94 !important;}
+.h3checkout{margin-bottom:20px !important}
+.retirar, .sedex{background-color:#49c6cd !important;border-color:#49c6cd !important;}
+.boxpresente h3{color:#ff2483}
+.boxpresente{background: #fff;border:1px solid #dbdbdb;padding: 25px 40px;width: 100%;float: left;margin-bottom: 30px;}
+.desc_presente{font-size:12px;}
+.boxpresente .form-check-label{color:#ff2483}
+.form-dados select{color:#999 !important;padding:0px !important; height:64px;text-align:center !important;text-align-last:center;padding-right: 29px;}
+.preco_pgto{margin:20px 0;font-weight:bold;font-size:25px;color:#646464;}
+.font_menor{font-size:18px;font-weight:normal;}
+.font_menor2{font-size: 12px;}
+#planoescolhido{background-color:#e63680;color:#fff;width:100%;padding:20px 5px;border-radius:100px;border-color:#e63680;font-size:18px;}
+.red{color:red;}
