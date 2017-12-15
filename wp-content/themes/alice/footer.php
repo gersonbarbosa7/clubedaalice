@@ -58,7 +58,7 @@
         //get_template_part('includes/modules/module', 'midia');
 ?>
 
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 <script type="text/javascript" src="<?php echo get_template_directory_uri(); ?>/js/mascaras.js"></script>
 <script type="text/javascript" src="<?php echo get_template_directory_uri(); ?>/js/functions.js"></script>
@@ -96,7 +96,7 @@
 		fbq('init', '1859045827708335');
 		fbq('track', 'PageView');
 	</script>
-	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script> 
+	<!--<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script> -->
 	<script type="text/javascript" src="<?php bloginfo('template_directory'); ?>/vendor/jquery-sticky/jquery.sticky.js"></script>
 	<script type="text/javascript">
 		$(document).ready(function(){
@@ -112,21 +112,15 @@
 			    	$("#top-bar").sticky({topSpacing:0});
 			    <?php endif; ?>
 		    }
-                    //by Gerson
-                    $("#cartao1").click(function(){
-                        $(this).hide();
-                        $(".imgcheck2").hide();                        
-                        $(".imgcheck1").show();
-                        $("#cartao2").show();
-                        $("#carteirinha").val('pink');
-                    });
-                    $("#cartao2").click(function(){
-                        $(this).hide();
-                        $(".imgcheck1").hide();                        
-                        $(".imgcheck2").show();
-                        $("#cartao1").show();
-                        $("#carteirinha").val('black');
-                    });
+                    
+                    <?php if (is_page('11261')){ ?>
+                    //Se digitar Enter
+                            $(document).keypress(function (e) {
+                            if (e.which == 13) {
+                                prepararCheckout();
+                            }
+                        });
+                    <?php } ?>
                     
      
                     

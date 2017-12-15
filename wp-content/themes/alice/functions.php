@@ -23,9 +23,9 @@
 	        if ( ! is_admin()) {
 		        wp_deregister_script('jquery'); 
 		        wp_register_script('main', THEME_PATH . 'js/main.js', [], rand(0, 999));
-		        wp_register_script('jquery', VENDOR . 'jquery/dist/jquery.min.js');
+		        //wp_register_script('jquery', VENDOR . 'jquery/dist/jquery.min.js');
 		        wp_register_script('owl', VENDOR . 'owl.carousel/dist/owl.carousel.min.js');
-		        wp_register_script('bootstrap', VENDOR . 'bootstrap-sass/assets/javascripts/bootstrap.min.js');
+		        //wp_register_script('bootstrap', VENDOR . 'bootstrap-sass/assets/javascripts/bootstrap.min.js');
 		        wp_register_script('lightbox', THEME_PATH . 'js/lightbox.min.js');   
 		        wp_register_script('masonry', THEME_PATH . 'js/masonry.js');       
 
@@ -680,4 +680,10 @@ add_action( 'wp_loaded','my_flush_ALL_rules' );
 function my_flush_ALL_rules(){
   global $wp_rewrite;
   $wp_rewrite->flush_rules();
+}
+
+//woocommerce support
+add_action( 'after_setup_theme', 'woocommerce_support' );
+function woocommerce_support() {
+    add_theme_support( 'woocommerce' );
 }

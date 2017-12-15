@@ -82,3 +82,4 @@ Version: 1.0.0
 .font_menor2{font-size: 12px;}
 #planoescolhido{background-color:#e63680;color:#fff;width:100%;padding:20px 5px;border-radius:100px;border-color:#e63680;font-size:18px;}
 .red{color:red;}
+.icon_check, .icon_check-empty{position: absolute;left: 14px;top: 0;}

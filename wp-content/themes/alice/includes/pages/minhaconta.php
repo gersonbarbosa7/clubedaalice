@@ -72,13 +72,13 @@
                     </div>
                     <div class="form-check">
                         <label class="form-check-label">
-                            <input class="form-check-input" type="checkbox" value="feminino" checked>
+                            <input class="form-check-input" type="checkbox" value="feminino" disabled="disabled" checked="checked">
                             Feminino
                         </label>
                     </div>
-                    
-                    <input type="hidden" name="carteirinha" id="carteirinha" />
-                    
+
+                    <input type="hidden" name="produto_id" id="produto_id" value="" />
+
                 </form>
             </div>
         </div>        
@@ -93,40 +93,55 @@
                 <h2><strong>- Escolha sua carteirinha</strong><br />Seu Passaporte de Descontos e Vantagens</h2>
             </div>
         </div>
-        <div class="row line-pink">
-            <div class="col-sm-3 col-xs-12 text-center">
-                <img src="<?php echo get_template_directory_uri(); ?>/images/carteirinha1.png" class="img-responsive fullimg imgcartao nocheck" id="cartao1" />
-                <img src="<?php echo get_template_directory_uri(); ?>/images/carteirinha1-check.png" class="img-responsive fullimg imgcartao imgcheck1" style="display: none;" />
-                <h4>Carteirinha Pink</h4>
-                <button class="btn btn-default button-pink"><strong>R$99</strong>/ANO</button>
-            </div>
-            <div class="col-sm-9 col-xs-12">
-                <div class="alert alert-danger alert-pink fade in">                    
-                    <h3>Carteirinha Pink</h3>
-                    <p>Lorem Ipsum é simplesmente uma simulação de texto da indústria tipográfica e de impressos, e vem sendo utilizado desde o século XVI, quando um impressor desconhecido pegou uma bandeja de tipos e os embaralhou para fazer um livro de modelos de tipos. Lorem Ipsum sobreviveu não só a cinco séculos, como também ao salto para a editoração eletrônica, permanecendo essencialmente inalterado. Se popularizou na década de 60, quando a Letraset lançou decalques contendo passagens de Lorem Ipsum, e mais recentemente quando passou a ser integrado a softwares de editoração eletrônica como Aldus PageMaker. Lorem Ipsum é simplesmente uma simulação de texto da indústria tipográfica e de impressos, e vem sendo utilizado desde o século XVI. Lorem Ipsum é simplesmente uma simulação de texto da indústria tipográfica e de impressos, e vem sendo utilizado desde o século XVI.
 
-</p>
-                  </div>
-            </div>
-        </div><!--/rosa-->
+        <?php
+        $args = array(
+            'post_type' => 'product',
+            'posts_per_page' => '2'
+                /* 'tax_query' => array(
+                  array(
+                  'taxonomy' => 'tipo_de_cartao',
+                  'field' => 'slug',
+                  'terms' => 'pessoa-juridica'
+                  )
+                  ),
+                  'posts_per_page' => '10' */
+        );
+        $loop = new WP_Query($args);
+        if ($loop->have_posts()) {
+            while ($loop->have_posts()) : $loop->the_post();
+                if (has_post_thumbnail()) {
+                    $cor = get_post_meta(get_the_ID(), "cor", true);
+                    $preco = get_post_meta(get_the_ID(), "_regular_price", true);
+                    ?>
+
+                    <div class="row line-pink rowProduto" id="<?php echo get_the_ID(); ?>" onclick="selecionaProduto(this.id)" url-produto="<?php echo get_the_permalink(); ?>">
+                        <div class="col-sm-3 col-xs-12 text-center">
+                            <img src="<?php echo get_template_directory_uri(); ?>/images/icon_check-empty.png" class="img-responsive empty_<?php echo get_the_ID(); ?> icon_check-empty" />
+                            <img src="<?php echo get_template_directory_uri(); ?>/images/icon-check.png" class="img-responsive icon_check check_<?php echo get_the_ID(); ?>" referencia="<?php echo get_the_ID(); ?>" style="display: none;" />
+                            <img src="<?php the_post_thumbnail_url(); ?>" class="img-responsive fullimg imgcartao nocheck" id="cartao1" alt="<?php the_title(); ?>" />
+                            <!---->
+                            <h4 <?php if ($cor) { echo 'style="color:' . $cor . ' !important;"'; } ?>><?php the_title(); ?></h4>
+                            <button class="btn btn-default button-pink" <?php if ($cor) { echo 'style="background:' . $cor . ' !important;"'; } ?>><strong>R$<?php echo $preco; ?></strong>/ANO</button>
+                        </div>
+                        <div class="col-sm-9 col-xs-12">
+                            <div class="alert alert-danger alert-pink fade in" <?php if ($cor) { echo 'style="background:' . $cor . ' !important;"'; } ?>>                    
+                                <h3><?php the_title(); ?></h3>
+                                <?php the_content(); ?>
+                            </div>
+                        </div>
+                    </div><!--/rosa-->
+
+                <?php
+                } endwhile;
+        } else {
+            echo '<div class="col-md-12 col-sm-12 col-xs-12">Nenhum produto encontrado.</div>';
+        }
+        wp_reset_postdata();
+        ?>
+
+
         
-        <!--black-->        
-        <div class="row line-black">
-            <div class="col-sm-3 col-xs-12 text-center">
-                <img src="<?php echo get_template_directory_uri(); ?>/images/carteirinha2.png" class="img-responsive fullimg imgcartao nocheck" id="cartao2" />
-                <img src="<?php echo get_template_directory_uri(); ?>/images/carteirinha2-check.png" class="img-responsive fullimg imgcartao imgcheck2" style="display: none;" />
-                <h4>Carteirinha Black</h4>
-                <button class="btn btn-default button-black"><strong>R$199</strong>/ANO</button>
-            </div>
-            <div class="col-sm-9 col-xs-12">
-                <div class="alert alert-danger alert-black fade in">                    
-                    <h3>Carteirinha Black</h3>
-                    <p>Lorem Ipsum é simplesmente uma simulação de texto da indústria tipográfica e de impressos, e vem sendo utilizado desde o século XVI, quando um impressor desconhecido pegou uma bandeja de tipos e os embaralhou para fazer um livro de modelos de tipos. Lorem Ipsum sobreviveu não só a cinco séculos, como também ao salto para a editoração eletrônica, permanecendo essencialmente inalterado. Se popularizou na década de 60, quando a Letraset lançou decalques contendo passagens de Lorem Ipsum, e mais recentemente quando passou a ser integrado a softwares de editoração eletrônica como Aldus PageMaker. Lorem Ipsum é simplesmente uma simulação de texto da indústria tipográfica e de impressos, e vem sendo utilizado desde o século XVI. Lorem Ipsum é simplesmente uma simulação de texto da indústria tipográfica e de impressos, e vem sendo utilizado desde o século XVI.
-
-</p>
-                  </div>
-            </div>
-        </div><!--/black-->
     </div>
 </section>
 
@@ -136,20 +151,22 @@
             <div class="col-sm-3 hidden-xs"></div>
             <div class="col-sm-6 text-center">
                 <div class="form-check">
-                        <label class="form-check-label">
-                            <input class="form-check-input" type="checkbox" value="feminino" checked required>
-                            Li e aceito os termos de uso
-                        </label>
+                    <label class="form-check-label">
+                        <input class="form-check-input" type="checkbox" value="feminino" checked required>
+                        Li e aceito os termos de uso
+                    </label>
                     <br /><a href="javascript:void(0)">Ler os termos de contrato</a>
-                    </div>
+                </div>
             </div>
             <div class="col-sm-3 col-xs-12">
-                <button class="btn btn-danger btn-alice" onclick="window.location.href='<?php echo home_url(); ?>'">VOLTAR</button>
-                <button class="btn btn-success btn-alice" onclick="window.location.href='<?php echo home_url(); ?>/plano-escolhido'">AVANÇAR</button>
+                <button class="btn btn-danger btn-alice" onclick="window.location.href = '<?php echo home_url(); ?>'">VOLTAR</button>
+                <button class="btn btn-success btn-alice" onclick="prepararCheckout()">AVANÇAR</button>
             </div>
         </div>
     </div>
 </section>
+
+
 
 
 <div class="container">
