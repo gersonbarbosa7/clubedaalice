@@ -65,6 +65,7 @@ var prepararCheckout = function(){
     //dados da compra
     var produto = $("#produto_id").val();
     var urlproduto = $("#"+produto).attr("url-produto");
+    var dadosform = $("#dados_carteirinha").serialize();
     
     //validação simples
     if (!nome){
@@ -82,12 +83,63 @@ var prepararCheckout = function(){
     } else if (!produto){
        alert("Selecione o tipo de carteirinha!");       
     } else {
-        $("#preloader_modal").modal('show');
+        window.location.href=urlproduto + '/?'+dadosform;
+        /*$("#preloader_modal").modal('show');
         //var newURL = window.location.protocol + "//" + window.location.host + "/" + window.location.pathname + "/?post-type=product&add-to-cart='"+produto;
         setTimeout(function(){
-            window.location.href=urlproduto;
-        }, 2000);
+            window.location.href=urlproduto + '/?'+dadosform;
+        }, 2000);*/
     }    
+}
+
+var validarCpf = function(cpf){
+      
+    cpf = cpf.replace(/[^\d]+/g,'');    
+    if(cpf == '') return false; 
+    // Elimina CPFs invalidos conhecidos    
+    if (cpf.length != 11 || 
+        cpf == "00000000000" || 
+        cpf == "11111111111" || 
+        cpf == "22222222222" || 
+        cpf == "33333333333" || 
+        cpf == "44444444444" || 
+        cpf == "55555555555" || 
+        cpf == "66666666666" || 
+        cpf == "77777777777" || 
+        cpf == "88888888888" || 
+        cpf == "99999999999")
+            return false;       
+    // Valida 1o digito 
+    var add = 0;    
+    for (i=0; i < 9; i ++)       
+        add += parseInt(cpf.charAt(i)) * (10 - i);  
+        rev = 11 - (add % 11);  
+        if (rev == 10 || rev == 11)     
+            rev = 0;    
+        if (rev != parseInt(cpf.charAt(9)))     
+            return false;       
+    // Valida 2o digito 
+    add = 0;    
+    for (i = 0; i < 10; i ++)        
+        add += parseInt(cpf.charAt(i)) * (11 - i);  
+    var rev = 11 - (add % 11);  
+    if (rev == 10 || rev == 11) 
+        rev = 0;    
+    if (rev != parseInt(cpf.charAt(10)))
+        return false;       
+    return true;   
+
+}
+
+var buscarCep = function(){
+    var cep = $("#cep").val();
+    $.get("https://viacep.com.br/ws/"+cep+"/json/", function(retorno){
+        $("#bairro").val(retorno.bairro);
+        $("#rua").val(retorno.logradouro);
+        $("#cidade").val(retorno.localidade);
+        $("#estado").val(retorno.uf);
+        $("#complemento").val(retorno.complemento);
+    });
 }
 
 $(document).ready(function(){

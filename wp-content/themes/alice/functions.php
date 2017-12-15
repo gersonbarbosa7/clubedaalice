@@ -687,3 +687,43 @@ add_action( 'after_setup_theme', 'woocommerce_support' );
 function woocommerce_support() {
     add_theme_support( 'woocommerce' );
 }
+
+//LIMITAR OS CARACTERES DO THE_EXCERTP() NO WORDPRESS
+function excerpt($limit) {
+        $excerpt = explode(' ', get_the_excerpt(), $limit);
+        if (count($excerpt)>=$limit) {
+                array_pop($excerpt);
+                $excerpt = implode(" ",$excerpt).'...';
+        } else {
+                $excerpt = implode(" ",$excerpt);
+        }
+$excerpt = preg_replace('`\[[^\]]*\]`','',$excerpt);
+return $excerpt;
+}
+function recent_posts($no_posts = 10, $excerpts = true) {
+global $wpdb;
+$request = "SELECT ID, post_title, post_excerpt FROM $wpdb->posts WHERE post_status = 'publish' AND post_type='portifolio' ORDER BY post_date DESC LIMIT $no_posts";
+$posts = $wpdb->get_results($request);
+if($posts) {
+foreach ($posts as $posts) {
+$post_title = stripslashes($posts->post_title);
+$permalink = get_permalink($posts->ID);
+$output .= '
+' . HTMLSPECIALCHARS($POST_TITLE) . '
+';
+if($excerpts) {
+$output.= '
+' . stripslashes($posts->post_excerpt);
+}$output .= '';
+}
+} else {
+$output .= '
+No posts found';
+}
+echo $output;
+}
+function new_excerpt_more($more) {
+global $post;
+return '<p><a class="button_readmore" href="'. get_permalink($post->ID) . '"> Leia Mais</a></p>';
+}
+add_filter('excerpt_more', 'new_excerpt_more');

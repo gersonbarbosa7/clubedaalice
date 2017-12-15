@@ -1,6 +1,15 @@
+
+<?php
+//recebendo dados
+$nome = $_GET['nome'];
+$nascimento = $_GET['nascimento'];
+$telefone = $_GET['tel'];
+
+?>
+
 <!--container-->
 </div>
-
+<?php if (have_posts()): while(have_posts()): the_post(); ?>
 <form class="cadastro-basico " method="POST" action="<?php echo home_url(); ?>/pagamento">
     <section id="minhaconta">
         <div class="container">
@@ -33,18 +42,18 @@
 
                     <div class="col-sm-12 col-xs-12">
                         <div class="col-sm-4 col-xs-12">
-                            <img src="<?php echo get_template_directory_uri(); ?>/images/cartao-escolhido.jpg" class=" img-responsive" />
+                            <img src="<?php the_post_thumbnail_url(); ?>" class=" img-responsive" />
                         </div>
 
                         <div class="col-sm-4 col-xs-12">
-                            <h3 class="title_pink">Carteirinha Pink</h3>
-                            <p>Lorem Ipsum é simplesmente uma simulação de texto da indústria tipográfica e de impressos, e vem sendo utilizado desde o século XVI, quando um impressor desconhecido pegou uma bandeja de tipos e os embaralhou para fazer um livro de modelos de tipos. Lorem Ipsum.</p>
+                            <h3 class="title_pink"><?php the_title(); ?></h3>
+                            <?php echo excerpt(50); ?>
                         </div>
 
                         <div class="col-sm-4 col-xs-12">
                             <h3 class="custo">CUSTO DA CARTEIRINHA</h3>
                             <span class="desc_custo">até 3x sem juros nos cartões de crédito.</span><br />
-                            <span class="cifrao">R$</span> <span class="preco">99</span><span class="centavos">/ANO</span>
+                            <span class="cifrao">R$</span> <span class="preco"><?php echo get_post_meta(get_the_ID(), "_regular_price", true); ?></span><span class="centavos">/ANO</span>
                         </div>
 
 
@@ -61,16 +70,16 @@
                         </div>
                         <div class="form-group">
                             <div class="col-sm-6 col-xs-12 left0">
-                                <input type="text" name="cep" maxlength="9" id="cep" class="form-control campo-alice" onkeyup="mascara(this, mcep);" placeholder="CEP" required/>
+                                <input type="text" name="cep" maxlength="10" id="cep" class="form-control campo-alice" onkeyup="mascara(this, mcep);" onblur="buscarCep()" placeholder="CEP" required/>
                             </div>
 
                             <div class="col-sm-6 col-xs-12 right0">
-                                <input type="text" name="bairro" id="bairro" class="form-control campo-alice" placeholder="Bairro" required/>
+                                <input type="text" name="bairro" id="bairro" class="form-control campo-alice" placeholder="Bairro" readonly="readonly"/>
                             </div>
                             <div class="clearfix"></div>
                         </div>
                         <div class="form-group">
-                            <input type="text" name="rua" id="rua" class="form-control campo-alice" placeholder="Rua" required/>
+                            <input type="text" name="rua" id="rua" class="form-control campo-alice" placeholder="Rua" readonly="readonly" required/>
                         </div>
                         <div class="form-group">
                             <div class="col-sm-6 col-xs-12 left0">
@@ -78,17 +87,17 @@
                             </div>
 
                             <div class="col-sm-6 col-xs-12 right0">
-                                <input type="text" name="complemento" id="complemento" class="form-control campo-alice" placeholder="Complemento" required/>
+                                <input type="text" name="complemento" id="complemento" class="form-control campo-alice" placeholder="Complemento" />
                             </div>
                             <div class="clearfix"></div>
                         </div>
                         <div class="form-group">
                             <div class="col-sm-6 col-xs-12 left0">
-                                <input type="text" name="cidade" id="cidade" class="form-control campo-alice" placeholder="Cidade" required/>
+                                <input type="text" name="cidade" id="cidade" class="form-control campo-alice" placeholder="Cidade" readonly="readonly"/>
                             </div>
 
                             <div class="col-sm-6 col-xs-12 right0">
-                                <input type="text" name="estado" id="estado" class="form-control campo-alice" placeholder="Estado" required/>
+                                <input type="text" name="estado" id="estado" class="form-control campo-alice" placeholder="Estado" readonly="readonly"/>
                             </div>
                             <div class="clearfix"></div>
                         </div>                        
@@ -205,8 +214,14 @@
             </div>        
         </div>
     </section>
+    
+    <!--dados do usuário-->
+    <input type="hidden" name="nome" id="nome" value="<?php echo $nome; ?>" />
+    <input type="hidden" name="email" id="email" value="<?php echo $email; ?>" />
+    <input type="hidden" name="tel" id="tel" value="<?php echo $tel; ?>" />
+    
 </form>
-
+<?php endwhile; endif; ?>
 
 
 

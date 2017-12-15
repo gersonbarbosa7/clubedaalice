@@ -54,7 +54,7 @@
             <div class="col-sm-6 col-xs-12 form-dados">
                 <h3 class="h3checkout">- Preencha com seus dados</h3>
 
-                <form class="cadastro-basico" method="POST" action="">
+                <form class="cadastro-basico" id="dados_carteirinha" method="POST" action="">
                     <div class="form-group">
                         <input type="text" name="nome" id="nome" class="form-control campo-alice" placeholder="Seu nome completo" required/>
                     </div>
@@ -68,7 +68,7 @@
                         <input type="email" name="email2" id="email2" class="form-control campo-alice" placeholder="Repita seu melhor e-mail" required/>
                     </div>
                     <div class="form-group">
-                        <input type="tel" name="tel" id="tel" class="form-control campo-alice" maxlength="13" onkeyup="mascara(this, mtel);" placeholder="Telefone celular com DDD" required/>
+                        <input type="tel" name="tel" id="tel" class="form-control campo-alice" maxlength="14" onkeyup="mascara(this, mtel);" placeholder="Telefone celular com DDD" required/>
                     </div>
                     <div class="form-check">
                         <label class="form-check-label">
