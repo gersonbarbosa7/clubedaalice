@@ -2,6 +2,7 @@
 <?php
 //recebendo dados
 $nome = $_GET['nome'];
+$email = $_GET['email'];
 $nascimento = $_GET['nascimento'];
 $telefone = $_GET['tel'];
 
@@ -182,21 +183,21 @@ $telefone = $_GET['tel'];
 
                             <div class="form-check">
                                 <label class="form-check-label">
-                                    <input class="form-check-input" type="radio" name="presente" value="10sessoes">
+                                    <input class="form-check-input" type="radio" name="presente" value="10sessoes" required>
                                     10 Sessões de Depilação | Espaço lazer
                                 </label>
                                 <label class="form-check-label">
-                                    <input class="form-check-input" type="radio" name="presente" value="cremenatura">
+                                    <input class="form-check-input" type="radio" name="presente" value="cremenatura" required>
                                     Creme Hidratante Natura
                                 </label>
                                 <label class="form-check-label">
-                                    <input class="form-check-input" type="radio" name="presente" value="10sessoes">
+                                    <input class="form-check-input" type="radio" name="presente" value="10sessoes" required>
                                     Voucher R$ 50 Havanna Café
                                 </label>
                                 <br />                                
                                 <p><hr /></p>                                
                                  <label class="form-check-label">
-                                    <input class="form-check-input" type="radio" name="presente" value="10sessoes">
+                                    <input class="form-check-input" type="radio" name="presente" value="10sessoes" required>
                                     Escolher 1 Presente na Loja Clube
                                 </label>
                                 
@@ -218,7 +219,8 @@ $telefone = $_GET['tel'];
     <!--dados do usuário-->
     <input type="hidden" name="nome" id="nome" value="<?php echo $nome; ?>" />
     <input type="hidden" name="email" id="email" value="<?php echo $email; ?>" />
-    <input type="hidden" name="tel" id="tel" value="<?php echo $tel; ?>" />
+    <input type="hidden" name="nascimento" id="nascimento" value="<?php echo $nascimento; ?>" />
+    <input type="hidden" name="tel" id="tel" value="<?php echo $telefone; ?>" />
     
 </form>
 <?php endwhile; endif; ?>
