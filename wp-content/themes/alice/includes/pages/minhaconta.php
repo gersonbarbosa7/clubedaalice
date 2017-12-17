@@ -152,10 +152,10 @@
             <div class="col-sm-6 text-center">
                 <div class="form-check">
                     <label class="form-check-label">
-                        <input class="form-check-input" type="checkbox" value="feminino" checked required>
+                        <input class="form-check-input" type="checkbox" name="termos" id="termos" value="aceito" checked required>
                         Li e aceito os termos de uso
                     </label>
-                    <br /><a href="javascript:void(0)">Ler os termos de contrato</a>
+                    <br /><a href="javascript:void(0)" data-toggle="modal" data-target="#termos_condicoes">Ler os termos de contrato</a>
                 </div>
             </div>
             <div class="col-sm-3 col-xs-12">

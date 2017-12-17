@@ -66,6 +66,7 @@ var prepararCheckout = function(){
     var produto = $("#produto_id").val();
     var urlproduto = $("#"+produto).attr("url-produto");
     var dadosform = $("#dados_carteirinha").serialize();
+    var termos = $("#termos");
     
     //validação simples
     if (!nome){
@@ -82,7 +83,10 @@ var prepararCheckout = function(){
        $("#tel").focus();
     } else if (!produto){
        alert("Selecione o tipo de carteirinha!");       
+    } else if (!termos.is(':checked')){
+        alert("Você deve aceitar os termos e condições");
     } else {
+        $("#preloader_modal").modal('show');
         window.location.href=urlproduto + '/?'+dadosform;
         /*$("#preloader_modal").modal('show');
         //var newURL = window.location.protocol + "//" + window.location.host + "/" + window.location.pathname + "/?post-type=product&add-to-cart='"+produto;

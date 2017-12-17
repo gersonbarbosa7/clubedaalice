@@ -83,3 +83,4 @@ Version: 1.0.0
 #planoescolhido{background-color:#e63680;color:#fff;width:100%;padding:20px 5px;border-radius:100px;border-color:#e63680;font-size:18px;}
 .red{color:red;}
 .icon_check, .icon_check-empty{position: absolute;left: 14px;top: 0;}
+.progress-bar{background-color: #e32d7f !important;}
