@@ -142,6 +142,24 @@ var buscarCep = function(){
     });
 }
 
+var dadosFacebook = function(){
+    FB.api('/me?fields=name,email,first_name,last_name,gender', function(response) {
+		console.log(response);
+		$(".container-cupom .link-face").remove();
+	    var dados = response;
+	    if (dados.gender == "male"){
+			$('.container-cupom .message').html("Esta promoção é exclusiva para mulheres. Obrigada!").show();
+			return;
+	    }
+	    if(dados.email === undefined || !dados.email) {
+	    	$('.container-cupom .message').html("Não conseguimos capturar seu E-mail. Verifique suas configurações de Privacidade no Facebook e tente novamente.").show();
+			return;
+	    }
+            alert("Seu nome é: "+dados.first_name);
+	    
+	});
+};
+
 $(document).ready(function(){
     formasPgto();
     formasEntrega();  
