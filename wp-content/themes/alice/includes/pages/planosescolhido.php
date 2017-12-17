@@ -199,7 +199,7 @@ $telefone = $_GET['tel'];
                                 <br />                                
                                 <p><hr /></p>                                
                                  <label class="form-check-label">
-                                    <input class="form-check-input" type="radio" name="presente" value="10sessoes" required>
+                                    <input class="form-check-input" type="radio" name="presente" value="Escolher 1 Presente na Loja Clube" required>
                                     Escolher 1 Presente na Loja Clube
                                 </label>
                                 

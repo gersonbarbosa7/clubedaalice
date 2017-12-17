@@ -1,6 +1,37 @@
 <!--container-->
 </div>
 
+<?php
+//recebendo dados
+$nome = $_POST['nome'];
+$email = $_POST['email'];
+$nascimento = $_POST['nascimento'];
+$telefone = $_POST['tel'];
+$produto = $_POST['produto'];
+
+
+//dados do cliente
+$cpf = $_POST['cpf'];
+$cep = $_POST['cep'];
+$bairro = $_POST['bairro'];
+$rua = $_POST['rua'];
+$numero = $_POST['numero'];
+$complemento = $_POST['complemento'];
+$cidade = $_POST['cidade'];
+$estado = $_POST['estado'];
+
+//forma de pagamento
+$tipo_pgto = $_POST['tipo_pgto'];
+
+//entrega
+$entrega = $_POST['entrega'];
+
+//presente
+$presente = $_POST['presente'];
+
+
+?>
+
 <form class="cadastro-basico " method="POST" action="<?php echo home_url(); ?>/obrigado">
     <section id="minhaconta">
         <div class="container">
@@ -31,7 +62,7 @@
                     <div class="col-sm-12 form-dados">
                         <h3 class="h3checkout">Cartão de crédito</h3>
                          <img src="<?php echo get_template_directory_uri(); ?>/images/formas-de-pagamento.jpg" class="img-responsive" alt="Formas de pagamento" />
-                         <p class="preco_pgto">R$99 + <span class="font_menor">R$10,00 do frete</span></p>
+                         <p class="preco_pgto">R$99 + <span class="font_menor">R$<?php the_field('valor_do_frete', 'options'); ?> do frete</span></p>
                          <p>Você receberá sua carteirinha por Sedex no endereço cadastrado</p>
                          <button class="btn btn-default" id="planoescolhido"><strong>Plano Escolhido</strong> Carteirinha Pink</button>
                     </div>
@@ -42,14 +73,14 @@
                     
                     <div class="col-sm-8">
                         <p><strong>Código:</strong> ALICE 52 01 4230<br />
-                        <strong>Nome:</strong> MARIA DAS DORES<br />
+                        <strong>Nome:</strong> <?php echo $nome; ?><br />
                         <strong>Validade:</strong> NOV / 18<br />
                         <span class="red">Pagamento à confirmar</span></p>
                     </div>
                     
                     <div class="col-sm-12">
                         <h4 class="h4green">Presente de boas vindas:</h4>
-                        <p>Voucher 10 Sessões de Depilação</p>
+                        <p><?php echo $presente; ?></p>
                     </div>
                     
                     <div class="col-sm-12">                        
