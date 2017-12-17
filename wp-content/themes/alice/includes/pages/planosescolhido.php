@@ -177,23 +177,25 @@ $telefone = $_GET['tel'];
 
                             <div class="form-group">
                                 <div class="col-sm-12 col-xs-12">
-                                    <p class="text-center desc_presente">Lorem Ipsum é simplesmente uma simulação de texto da indústria tipográfica e de impressos, e vem sendo utilizado.</p>                      
+                                    <p class="text-center desc_presente"><?php the_field('texto_presente_checkout', 'options'); ?></p>                      
                                 </div>
                             </div>                        
 
                             <div class="form-check">
+                                
+                                <?php 
+                                $presentes = array(
+                                    'post_type' => 'presentes_boasvindas'
+                                );
+                                $loop_presentes = new WP_Query($presentes);
+                                if ($loop_presentes->have_posts()): while ($loop_presentes->have_posts()): $loop_presentes->the_post();
+                                ?>
                                 <label class="form-check-label">
-                                    <input class="form-check-input" type="radio" name="presente" value="10sessoes" required>
-                                    10 Sessões de Depilação | Espaço lazer
+                                    <input class="form-check-input" type="radio" name="presente" value="<?php the_title(); ?>" required>
+                                    <?php the_title(); ?>
                                 </label>
-                                <label class="form-check-label">
-                                    <input class="form-check-input" type="radio" name="presente" value="cremenatura" required>
-                                    Creme Hidratante Natura
-                                </label>
-                                <label class="form-check-label">
-                                    <input class="form-check-input" type="radio" name="presente" value="10sessoes" required>
-                                    Voucher R$ 50 Havanna Café
-                                </label>
+                                <?php endwhile; endif; wp_reset_postdata(); ?>
+                                
                                 <br />                                
                                 <p><hr /></p>                                
                                  <label class="form-check-label">
