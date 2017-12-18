@@ -46,7 +46,7 @@
                     
                 </div>
                 <div class="col-sm-6 col-xs-12">
-                    <img src="<?php echo get_template_directory_uri(); ?>/images/banner-obg.jpg" class="img-responsive" alt="Obrigado" />
+                    <img src="<?php the_field('imagem_2_obrigado', 'options'); ?>" class="img-responsive" alt="Obrigado" />
                     
                     
                     <div class="form-cartao form-dados">

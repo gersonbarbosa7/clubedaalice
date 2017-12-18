@@ -98,7 +98,7 @@ if (!$produto){
                     
                 </div>
                 <div class="col-sm-6 col-xs-12">
-                    <img src="<?php echo get_template_directory_uri(); ?>/images/banner-plano.jpg" class="img-responsive" alt="Formas de pagamento" />
+                    <img src="<?php the_field('imagem_1_checkout', 'options'); ?>" class="img-responsive" alt="Formas de pagamento" />
                     
                     
                     <div class="form-cartao form-dados">
