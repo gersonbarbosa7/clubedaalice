@@ -1,7 +1,7 @@
 /*
 Theme Name: Clube da Alice
 Theme URI: http://www.clubedaalice.com.br
-Author: Plug! AgÃªncia Web
+Author: Plug! AgÃƒÆ’Ã‚Âªncia Web
 Author URI: http://www.plug.ag
 Version: 1.0.0
  */
@@ -85,3 +85,28 @@ Version: 1.0.0
 .icon_check, .icon_check-empty{position: absolute;left: 14px;top: 0;}
 .progress-bar{background-color: #e32d7f !important;}
 .campo-erro{border-color:red !important;}
+#banner_novahome{background-color:#7e1349;}
+#posts_detaque img{width: 100%;}
+.box-textpost{padding:20px;border-left:2px solid #dbdbdb;border-right:2px solid #dbdbdb;border-bottom:2px solid #dbdbdb;border-bottom-left-radius: 10px 10px;border-bottom-right-radius: 10px 10px;}
+#banner_transforme img{width: 100%; margin:40px 0 40px 0;}
+.btn-rosa-alice{background-color: #e32d7e !important;color:#fff !important;border-radius:50px !important;border-color:#e32d7e !important;padding-left:30px !important;padding-right:30px !important;}
+
+@media screen and (min-width:768px){
+    #posts_detaque{margin-top:-70px;}
+}
+
+@media screen and (max-width:768px){
+    #posts_detaque{margin-top:40px;}
+    #posts_detaque .col-xs-12{margin-bottom: 40px;}
+    #login_topo{background-color:#e1367f;float:left;width:100%;color:#fff;padding-left:20px;}
+    #login_topo li a{color:#fff !important;}
+}
+
+.titulo_postdestaque{margin-top:-126px;color:#fff;padding:20px;background-image:url(images/bg-postdetaque.png); background-position:bottom center;float:left;width:100%;position:relative;}
+.titulo_postdestaque h3{font-size:18px;}
+.titulo_postdestaque span{color:#38d6dd;}
+
+#novo_miolo .titulo_postdestaque{margin-top:-105px !important;}
+#novo_miolo img{width:100%;}
+#novo_miolo .col-sm-12{margin-bottom: 40px;}
+.div_sidebar{margin-bottom: 40px;}
