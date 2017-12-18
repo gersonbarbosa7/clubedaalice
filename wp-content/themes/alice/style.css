@@ -84,3 +84,4 @@ Version: 1.0.0
 .red{color:red;}
 .icon_check, .icon_check-empty{position: absolute;left: 14px;top: 0;}
 .progress-bar{background-color: #e32d7f !important;}
+.campo-erro{border-color:red !important;}

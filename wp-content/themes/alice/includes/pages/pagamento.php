@@ -8,6 +8,7 @@ $email = $_POST['email'];
 $nascimento = $_POST['nascimento'];
 $telefone = $_POST['tel'];
 $produto = $_POST['produto'];
+$imagem_cartao = $_POST['imagem_cartao'];
 
 
 //dados do cliente
@@ -28,6 +29,14 @@ $entrega = $_POST['entrega'];
 
 //presente
 $presente = $_POST['presente'];
+
+//cor
+$cor = get_post_meta($produto, "cor", true);
+
+//Se não houver dados
+if (!$produto){
+    header("Location: " . home_url() . "/solicitar-carteirinha");
+}
 
 
 ?>
@@ -62,13 +71,13 @@ $presente = $_POST['presente'];
                     <div class="col-sm-12 form-dados">
                         <h3 class="h3checkout">Cartão de crédito</h3>
                          <img src="<?php echo get_template_directory_uri(); ?>/images/formas-de-pagamento.jpg" class="img-responsive" alt="Formas de pagamento" />
-                         <p class="preco_pgto">R$99 + <span class="font_menor">R$<?php the_field('valor_do_frete', 'options'); ?> do frete</span></p>
+                         <p class="preco_pgto">R$<?php echo get_post_meta($produto, '_regular_price', true); ?> + <span class="font_menor">R$<?php the_field('valor_do_frete', 'options'); ?> do frete</span></p>
                          <p>Você receberá sua carteirinha por Sedex no endereço cadastrado</p>
-                         <button class="btn btn-default" id="planoescolhido"><strong>Plano Escolhido</strong> Carteirinha Pink</button>
+                         <button class="btn btn-default" id="planoescolhido" <?php if ($cor) { echo 'style="background-color:' . $cor . ' !important; border-color: ' . $cor . ' "'; } ?>><strong>Plano Escolhido</strong> <?php echo get_the_title($produto); ?></button>
                     </div>
                     
                     <div class="col-sm-4">
-                        <img src="<?php echo get_template_directory_uri(); ?>/images/cartao-pequeno.jpg" class="img-responsive" alt="Plano escolhido" />
+                        <img src="<?php echo $imagem_cartao; ?>" class="img-responsive" alt="Plano escolhido" />
                     </div>
                     
                     <div class="col-sm-8">
@@ -112,7 +121,6 @@ $presente = $_POST['presente'];
                             <div class="clearfix"></div>
                         </div>
                         <div class="form-group">
-                            <div class="col-sm-6 col-xs-12 left0">
                                 <select name="parcelas" id="parcelas" class="form-control campo-alice">
                                 <option value="" selected>Nº de Parcelas</option>
                                 <option value="1">1x</option>
@@ -123,12 +131,6 @@ $presente = $_POST['presente'];
                                 <option value="6">6x</option>
                                 <option value="7">7x</option>
                             </select>
-                            </div>
-
-                            <div class="col-sm-6 col-xs-12 right0">
-                                <input type="text" name="bandeira" id="bandeira" class="form-control campo-alice" placeholder="Bandeira do cartão" required/>
-                            </div>
-                            <div class="clearfix"></div>
                         </div>
                        
                     </div>

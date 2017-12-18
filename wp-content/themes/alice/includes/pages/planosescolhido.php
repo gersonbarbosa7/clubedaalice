@@ -5,7 +5,7 @@ $nome = $_GET['nome'];
 $email = $_GET['email'];
 $nascimento = $_GET['nascimento'];
 $telefone = $_GET['tel'];
-
+$produto = $_GET['produto_id'];
 ?>
 
 <!--container-->
@@ -47,7 +47,7 @@ $telefone = $_GET['tel'];
                         </div>
 
                         <div class="col-sm-4 col-xs-12">
-                            <h3 class="title_pink"><?php the_title(); ?></h3>
+                            <h3 class="title_pink" <?php if ($cor) { echo 'style="color:' . $cor . ' !important;"'; } ?>><?php the_title(); ?>><?php the_title(); ?></h3>
                             <?php echo excerpt(50); ?>
                         </div>
 
@@ -208,8 +208,8 @@ $telefone = $_GET['tel'];
                     </div>
 
                     <div class="col-sm-12 col-xs-12 text-right">
-                        <button class="btn btn-danger btn-alice" onclick="window.location.href = '<?php echo home_url(); ?>/minha-conta'">VOLTAR</button>
-                        <button class="btn btn-success btn-alice" type="submit">AVANÇAR</button>
+                        <button class="btn btn-danger btn-alice" onclick="window.history.back()">VOLTAR</button>
+                        <button class="btn btn-success btn-alice" type="submit" id="avancar" disabled="disabled">AVANÇAR</button>
                     </div>
 
                 </div>
@@ -223,6 +223,8 @@ $telefone = $_GET['tel'];
     <input type="hidden" name="email" id="email" value="<?php echo $email; ?>" />
     <input type="hidden" name="nascimento" id="nascimento" value="<?php echo $nascimento; ?>" />
     <input type="hidden" name="tel" id="tel" value="<?php echo $telefone; ?>" />
+    <input type="hidden" name="produto" id="produto" value="<?php echo $produto; ?>" />
+    <input type="hidden" name="imagem_cartao" id="imagem_cartao" value="<?php the_post_thumbnail_url(); ?>" />
     
 </form>
 <?php endwhile; endif; ?>

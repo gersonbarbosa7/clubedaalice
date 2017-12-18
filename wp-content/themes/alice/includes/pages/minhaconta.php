@@ -70,13 +70,14 @@
                     <div class="form-group">
                         <input type="tel" name="tel" id="tel" class="form-control campo-alice" maxlength="14" onkeyup="mascara(this, mtel);" placeholder="Telefone celular com DDD" required/>
                     </div>
-                    <div class="form-check">
+                    <div class="form-check text-center">
                         <label class="form-check-label">
                             <input class="form-check-input" type="checkbox" value="feminino" disabled="disabled" checked="checked">
                             Feminino
                         </label>
                     </div>
 
+                    
                     <input type="hidden" name="produto_id" id="produto_id" value="" />
 
                 </form>
@@ -159,8 +160,8 @@
                 </div>
             </div>
             <div class="col-sm-3 col-xs-12">
-                <button class="btn btn-danger btn-alice" onclick="window.location.href = '<?php echo home_url(); ?>'">VOLTAR</button>
-                <button class="btn btn-success btn-alice" onclick="prepararCheckout()">AVANÇAR</button>
+                <button type="button" class="btn btn-danger btn-alice" onclick="window.history.back()">VOLTAR</button>
+                <button type="button" class="btn btn-success btn-alice" onclick="prepararCheckout()">AVANÇAR</button>
             </div>
         </div>
     </div>

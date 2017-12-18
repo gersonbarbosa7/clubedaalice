@@ -55,7 +55,7 @@ var selecionaProduto = function(id){
     });    
 };
 
-var prepararCheckout = function(){
+var prepararCheckout = function(idproduto){
     //dados da cliente
     var nome = $("#nome").val();
     var nascimento = $("#nascimento").val();    
@@ -64,7 +64,10 @@ var prepararCheckout = function(){
     
     //dados da compra
     var produto = $("#produto_id").val();
-    var urlproduto = $("#"+produto).attr("url-produto");
+    var urlproduto = "";
+    if (produto){
+        urlproduto += $("#"+produto).attr("url-produto");
+    }    
     var dadosform = $("#dados_carteirinha").serialize();
     var termos = $("#termos");
     
@@ -81,12 +84,12 @@ var prepararCheckout = function(){
     } else if (!celular){
        alert("Informe seu celular"); 
        $("#tel").focus();
-    } else if (!produto){
+    } else if (produto == '' || produto == 'undefined'){
        alert("Selecione o tipo de carteirinha!");       
     } else if (!termos.is(':checked')){
         alert("Você deve aceitar os termos e condições");
     } else {
-        $("#preloader_modal").modal('show');
+        $("#preloader_modal").modal();
         window.location.href=urlproduto + '/?'+dadosform;
         /*$("#preloader_modal").modal('show');
         //var newURL = window.location.protocol + "//" + window.location.host + "/" + window.location.pathname + "/?post-type=product&add-to-cart='"+produto;
@@ -137,12 +140,39 @@ var validarCpf = function(cpf){
 
 var buscarCep = function(){
     var cep = $("#cep").val();
-    $.get("https://viacep.com.br/ws/"+cep+"/json/", function(retorno){
+    $.getJSON("https://viacep.com.br/ws/"+cep+"/json/", function(){   
+        //
+    }).done(function(retorno){
+        
+        $("#bairro").removeClass('campo-erro');
+        $("#rua").removeClass('campo-erro');
+        $("#cidade").removeClass('campo-erro');
+        $("#estado").removeClass('campo-erro');
+        $("#complemento").removeClass('campo-erro');
+        
         $("#bairro").val(retorno.bairro);
         $("#rua").val(retorno.logradouro);
         $("#cidade").val(retorno.localidade);
         $("#estado").val(retorno.uf);
         $("#complemento").val(retorno.complemento);
+        $("#avancar").removeAttr('disabled');
+    }).fail(function(){
+        
+        alert("CEP inválido, tente novamente!");
+        
+        $("#bairro").val('');
+        $("#rua").val('');
+        $("#cidade").val('');
+        $("#estado").val('');
+        $("#complemento").val('');
+        
+        $("#bairro").addClass('campo-erro');
+        $("#rua").addClass('campo-erro');
+        $("#cidade").addClass('campo-erro');
+        $("#estado").addClass('campo-erro');
+        $("#complemento").addClass('campo-erro');
+        
+        $("#avancar").attr('disabled', 'disabled');
     });
 }
 
@@ -164,12 +194,13 @@ var dadosFacebook = function(){
 	});
 };
 
+var preloaderModal = function(){    
+    $("#preloader_modal").modal();
+}
+
 $(document).ready(function(){
     formasPgto();
-    formasEntrega();  
-    
-    var teste = window.location.pathname;
-    console.log("url: "+teste);
+    formasEntrega();    
     
 });
 
