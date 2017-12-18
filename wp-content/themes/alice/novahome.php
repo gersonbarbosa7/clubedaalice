@@ -6,7 +6,7 @@ get_template_part('header-novahome');
     <div class="container-fluid">
         <div class="row">
             <div class="col-sm-12 col-xs-12">
-                <img src="<?php echo get_template_directory_uri(); ?>/images/bg-novahome.jpg" class="img-responsive" id="banner_desktop" alt="Banner Alice" />
+                <img src="<?php the_field('banner_principal_nova_home', 'options'); ?>" class="img-responsive" id="banner_desktop" alt="Banner Alice" />
                 <img src="<?php echo get_template_directory_uri(); ?>/images/bg-mobile.jpg" class="img-responsive" alt="Banner Alice" id="banner_mobile" style="display: none;" />
             </div>
         </div>
@@ -67,7 +67,7 @@ get_template_part('header-novahome');
                 <!--loop posts-->
                 <div class="col-sm-12 col-xs-12">
                     <img src="<?php echo get_template_directory_uri(); ?>/images/blog1.jpg" class="img-responsive" alt="Banner Transform" />
-                    <div class="titulo_postdestaque text-center">
+                    <div class="titulo_postdestaque">
                         <h3>VAMOS CORRER QUE O VERÃO ESTÁ CHEGANDO</h3>
                         <span>ALICE EM FORMA</span>
                     </div>
@@ -81,7 +81,7 @@ get_template_part('header-novahome');
                 <!--loop posts-->
                 <div class="col-sm-12 col-xs-12">
                     <img src="<?php echo get_template_directory_uri(); ?>/images/blog1.jpg" class="img-responsive" alt="Banner Transform" />
-                    <div class="titulo_postdestaque text-center">
+                    <div class="titulo_postdestaque">
                         <h3>VAMOS CORRER QUE O VERÃO ESTÁ CHEGANDO</h3>
                         <span>ALICE EM FORMA</span>
                     </div>
