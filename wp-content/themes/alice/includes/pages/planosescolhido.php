@@ -111,7 +111,7 @@ $produto = $_GET['produto_id'];
 
                         <!--opções de pagamento-->
                         <fieldset>
-                            <h3 class="h3checkout">- Formas de pagamento</h3>
+                            <h3 class="h3checkout">- Escolha sua forma de pagamento</h3>
                             <div class="form-group">                     
                                 <div class="col-md-6 col-xs-12">
                                     <div class="input-group fullradio">
@@ -140,7 +140,7 @@ $produto = $_GET['produto_id'];
 
                         <!--retirada-->
                         <fieldset>
-                            <h3 class="h3checkout">- Entrega da certeirinha</h3>
+                            <h3 class="h3checkout">- Como deseja receber sua carteirinha ?</h3>
                             <div class="form-group">                     
                                 <div class="col-md-6 col-xs-12">
                                     <div class="input-group fullradio">
@@ -159,7 +159,7 @@ $produto = $_GET['produto_id'];
                             </div>
                             <div class="form-group">        
                                 <div class="col-sm-6 col-xs-12 text-center">
-                                    <span class="desc_entrega">Av. Cândido de Abreu, 127 - <strong>CA 11 - Piso L2</strong></span>
+                                    <span class="desc_entrega">Av. Cândido de Abreu, 127 - Centro Cívico, Curitiba - PR, 80530-060</span>
                                 </div>
                                 <div class="col-sm-6 col-xs-12 text-center">
                                     <span class="desc_entrega"><strong>R$ 10,00</strong> | 5 dias úteis</span>
@@ -171,7 +171,7 @@ $produto = $_GET['produto_id'];
                         <div class="boxpresente">
                             <div class="form-group">
                                 <div class="col-sm-12 col-xs-12">
-                                    <h3 class="h3checkout">- Presente de boas vindas</h3>                            
+                                    <h3 class="h3checkout">- Seu presente de boas vindas</h3>                            
                                 </div>
                             </div>
 
