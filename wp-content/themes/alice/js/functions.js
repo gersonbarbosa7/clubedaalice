@@ -178,21 +178,29 @@ var buscarCep = function(){
 
 var dadosFacebook = function(){
     FB.api('/me?fields=name,email,first_name,last_name,gender', function(response) {
-		console.log(response);
-		$(".container-cupom .link-face").remove();
+		console.log(response);		
 	    var dados = response;
 	    if (dados.gender == "male"){
-			$('.container-cupom .message').html("Esta promoção é exclusiva para mulheres. Obrigada!").show();
+			//$('.container-cupom .message').html("Esta promoção é exclusiva para mulheres. Obrigada!").show();
+                        alert("Masculino!");
 			return;
 	    }
 	    if(dados.email === undefined || !dados.email) {
-	    	$('.container-cupom .message').html("Não conseguimos capturar seu E-mail. Verifique suas configurações de Privacidade no Facebook e tente novamente.").show();
+	    	alert("Não conseguimos capturar seu E-mail. Verifique suas configurações de Privacidade no Facebook e tente novamente.");
 			return;
 	    }
             alert("Seu nome é: "+dados.first_name);
 	    
 	});
 };
+
+function loginUserOk(){
+	FB.login(function(response){
+		if (response.status === 'connected'){
+			dadosFacebook(response);
+		}
+	}, {scope: 'public_profile,email'});
+}
 
 var preloaderModal = function(){    
     $("#preloader_modal").modal();

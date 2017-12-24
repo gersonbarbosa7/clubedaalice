@@ -65,7 +65,7 @@
 	<?php 
 		wp_footer();
 	?>			
-	<script>
+	<!--<script>
 		jQuery(function(){
 			// efeito pinterest	 
 			var jQuerycontainer = jQuery('.grid');
@@ -95,7 +95,7 @@
 		document,'script','https://connect.facebook.net/en_US/fbevents.js');
 		fbq('init', '1859045827708335');
 		fbq('track', 'PageView');
-	</script>
+	</script>-->
 	<!--<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script> -->
 	<script type="text/javascript" src="<?php bloginfo('template_directory'); ?>/vendor/jquery-sticky/jquery.sticky.js"></script>
 	<script type="text/javascript">

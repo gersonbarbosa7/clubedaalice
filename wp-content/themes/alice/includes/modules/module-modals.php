@@ -11,7 +11,7 @@
       <div class="modal-body text-center">
           <h3>Criar conta</h3>
           <p><img src="https://projetos.gersonbarbosa.com/clubedaalice/wp-content/themes/alice/images/logo-clube-da-alice.png" class="img-responsive" alt="Logo - Clube da Alice" /></p>
-          <button class="btn btn-primary btn-fcb" onclick="window.location.href='<?php echo home_url(); ?>/minha-conta'"><i class="fa fa-facebook"></i> Entrar com o facebook</button>
+          <button class="btn btn-primary btn-fcb" onclick="loginUserOk()"><i class="fa fa-facebook"></i> Entrar com o facebook</button>
           <p class="p_modal">Por razões de segurança e conectividade, sua conta será criada, exclusivamente através de seu perfil no facebook ®</p>
           <p class="p_modal">Dados complementares serão solicitados após seu primeiro login.</p>
           <p class="p_modal"><a href="javascript:void(0)" class="link_terms">Consulte nossa política de privacidade</a><br />Clube da Alice | Todos os direitos resevados</p>
