@@ -781,3 +781,4 @@ global $post;
 return '<p><a class="button_readmore" href="'. get_permalink($post->ID) . '"> Leia Mais</a></p>';
 }
 add_filter('excerpt_more', 'new_excerpt_more');
+

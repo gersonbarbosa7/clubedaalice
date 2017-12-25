@@ -139,5 +139,6 @@
                 
 
 	</script>
+        <?php wp_nonce_field('ajax-login-nonce', 'security'); ?>     
 </body>
 </html>

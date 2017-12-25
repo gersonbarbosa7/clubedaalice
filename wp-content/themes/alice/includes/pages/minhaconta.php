@@ -1,6 +1,17 @@
 <!--container-->
 </div>
 
+<?php global $current_user;
+      get_currentuserinfo();
+
+      $login = $current_user->user_login;
+      $email = $current_user->user_email;      
+      $nome = $current_user->user_firstname;
+      $sobrenome = $current_user->user_lastname;      
+      $link = $current_user->user_url;         
+      $id = $current_user->ID;
+      $foto = get_user_meta($id, 'foto_do_perfil', true);
+?>
 
 <section id="minhaconta">
     <div class="container">
@@ -26,25 +37,25 @@
 
                 <div class="col-sm-12 col-xs-12">
                     <div class="col-sm-3 col-xs-12">
-                        <img src="<?php echo get_template_directory_uri(); ?>/images/foto-perfil.jpg" class=" img-responsive" />
+                        <img src="<?php echo "https://graph.facebook.com/v2.11/" . basename($link) . "/picture/?width=250&height=250"; ?>" class=" img-responsive" />
                     </div>
                     <div class="col-sm-9 col-xs-12 lista-btns">
                         <h3 class="h3fcb">- Dados Faceboook</h3>
-                        <button class="btn btn-primary btn-fcb"> Perfil do facebook <i class="fa fa-lock"></i></button>
+                        <button class="btn btn-primary btn-fcb" onclick="window.open('<?php echo $link; ?>')"> Perfil do facebook <i class="fa fa-lock"></i></button>
                     </div>
 
                     <div class="col-sm-12 col-xs-12 lista-btns">
                         <div class="col-sm-6 col-xs-12">
-                            <button class="btn btn-primary btn-fcb"> Nome do facebook <i class="fa fa-lock"></i></button>
+                            <button class="btn btn-primary btn-fcb"> <?php echo $login; ?> <i class="fa fa-lock"></i></button>
                         </div>
                         <div class="col-sm-6 col-xs-12">
-                            <button class="btn btn-primary btn-fcb"> Sobrenome <i class="fa fa-lock"></i></button>
+                            <button class="btn btn-primary btn-fcb"> <?php echo $sobrenome; ?> <i class="fa fa-lock"></i></button>
                         </div>
                         <div class="col-sm-6 col-xs-12">
-                            <button class="btn btn-primary btn-fcb"> E-mail do facebook <i class="fa fa-lock"></i></button>
+                            <button class="btn btn-primary btn-fcb"> <?php echo $email; ?>k <i class="fa fa-lock"></i></button>
                         </div>
                         <div class="col-sm-6 col-xs-12">
-                            <button class="btn btn-primary btn-fcb"> ID do facebook <i class="fa fa-lock"></i></button>
+                            <button class="btn btn-primary btn-fcb"> <?php echo basename($link); ?> <i class="fa fa-lock"></i></button>
                         </div>
                     </div>
 
@@ -56,16 +67,16 @@
 
                 <form class="cadastro-basico" id="dados_carteirinha" method="POST" action="">
                     <div class="form-group">
-                        <input type="text" name="nome" id="nome" class="form-control campo-alice" placeholder="Seu nome completo" required/>
+                        <input type="text" name="nome" id="nome" class="form-control campo-alice" placeholder="Seu nome completo" value="<?php echo $nome; ?>" required/>
                     </div>
                     <div class="form-group">
                         <input type="text" name="nascimento" maxlength="10" id="nascimento" class="form-control campo-alice" onkeyup="mascara(this, mdata);" placeholder="Data de nascimento" required/>
                     </div>
                     <div class="form-group">
-                        <input type="email" name="email" id="email" class="form-control campo-alice" placeholder="Seu melhor e-mail" required/>
+                        <input type="email" name="email" id="email" class="form-control campo-alice" placeholder="Seu melhor e-mail" value="<?php echo $email; ?>" required/>
                     </div>
                     <div class="form-group">
-                        <input type="email" name="email2" id="email2" class="form-control campo-alice" placeholder="Repita seu melhor e-mail" required/>
+                        <input type="email" name="email2" id="email2" class="form-control campo-alice" placeholder="Repita seu melhor e-mail" value="<?php echo $email; ?>" required/>
                     </div>
                     <div class="form-group">
                         <input type="tel" name="tel" id="tel" class="form-control campo-alice" maxlength="14" onkeyup="mascara(this, mtel);" placeholder="Telefone celular com DDD" required/>

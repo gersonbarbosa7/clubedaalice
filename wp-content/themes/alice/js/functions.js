@@ -177,30 +177,91 @@ var buscarCep = function(){
 }
 
 var dadosFacebook = function(){
-    FB.api('/me?fields=name,email,first_name,last_name,gender', function(response) {
-		console.log(response);		
+    FB.api('/me?fields=name,email,first_name,last_name,gender,picture', function(response) {
+		console.log(response);						
 	    var dados = response;
 	    if (dados.gender == "male"){
 			//$('.container-cupom .message').html("Esta promoção é exclusiva para mulheres. Obrigada!").show();
-                        alert("Masculino!");
+                        //alert("Masculino!");             
+                        $("#login_conta").modal("hide");
+                        $("#bloqueio_homens").modal("show");
+                        //consultaCadastro(dados.first_name, dados.id, dados.email, dados.first_name, dados.last_name, dados.picture.data.url);
 			return;
 	    }
 	    if(dados.email === undefined || !dados.email) {
 	    	alert("Não conseguimos capturar seu E-mail. Verifique suas configurações de Privacidade no Facebook e tente novamente.");
 			return;
 	    }
-            alert("Seu nome é: "+dados.first_name);
+            consultaCadastro(dados.first_name, dados.id, dados.email, dados.first_name, dados.last_name, dados.picture.data.url);
+            //alert("Seu nome é: "+dados.first_name);
 	    
 	});
 };
 
-function loginUserOk(){
+var loginUserOk = function(){
 	FB.login(function(response){
 		if (response.status === 'connected'){
 			dadosFacebook(response);
 		}
 	}, {scope: 'public_profile,email'});
+};
+
+var consultaCadastro = function(login, senha, email, nome, sobrenome, foto){
+    var dados = "login="+login+"&senha="+senha+"&email="+email+"&nome="+nome+"&sobrenome="+sobrenome+"&foto="+foto;
+    $.ajax({
+        type:"POST",
+        url:"https://projetos.gersonbarbosa.com/clubedaalice/cadastro-login/",
+        dataType:"json",
+        data: dados,
+        success: function(retorno){
+            if (retorno.status == 'ok'){
+                $("#text_processando").html("Usuário cadastrado com sucesso! Fazendo login...");
+                fazerLogin(retorno.login, retorno.senha);
+            } else if (retorno.status == 'existente'){
+                $("#text_processando").html("Usuário existente, fazendo login...");
+                fazerLogin(login, senha);
+            } else {
+                alert(retorno.error_msg);
+            }
+            //window.location.href='solicitar-carteirinha.html';
+        },
+        beforeSend: function(){
+            $("#login_conta").modal("hide");
+            $("#preloader_modal").modal("show");
+        },
+        error: function(xhn, text, err){
+            alert("Erro ao processar dados, tente novamente!");
+        },
+        complete: function(){
+            //$("#preloader_modal").modal("hide");
+        }
+    });
 }
+
+var fazerLogin = function(login, senha){
+    //get vars to login
+    $.ajax({
+        type: 'POST',
+        dataType: 'json',
+        url: 'https://projetos.gersonbarbosa.com/clubedaalice/fazer-login/',
+        data: {            
+            'login': login, 
+            'senha': senha, 
+            'security': $('#security').val() },
+        success: function(data){             
+            $('#text_processando').html(data.message);                 
+            console.log(data);
+                if (data.loggedin == true){
+                    window.location.href='https://projetos.gersonbarbosa.com/clubedaalice/solicitar-carteirinha';
+                }
+        },
+         error: function (request, status, error) {                                       
+            alert("Algo deu errado! Detalhes: "+status);
+            console.log(request, status, error);            
+        }
+    })
+};
+
 
 var preloaderModal = function(){    
     $("#preloader_modal").modal();
