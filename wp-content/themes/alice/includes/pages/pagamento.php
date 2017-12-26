@@ -2,6 +2,10 @@
 </div>
 
 <?php
+//usuário logado
+global $current_user; 
+get_currentuserinfo();
+
 //recebendo dados
 $nome = $_POST['nome'];
 $email = $_POST['email'];
@@ -9,7 +13,6 @@ $nascimento = $_POST['nascimento'];
 $telefone = $_POST['tel'];
 $produto = $_POST['produto'];
 $imagem_cartao = $_POST['imagem_cartao'];
-
 
 //dados do cliente
 $cpf = $_POST['cpf'];
@@ -20,6 +23,15 @@ $numero = $_POST['numero'];
 $complemento = $_POST['complemento'];
 $cidade = $_POST['cidade'];
 $estado = $_POST['estado'];
+
+//atualizando perfil do usuário
+update_user_meta($current_user->ID, 'billing_cellphone', $telefone);
+update_user_meta($current_user->ID, 'billing_postcode', $cep);
+update_user_meta($current_user->ID, 'billing_cpf', $cpf);
+update_user_meta($current_user->ID, 'billing_address_1', $rua);
+update_user_meta($current_user->ID, 'billing_address_2', $complemento);
+update_user_meta($current_user->ID, 'billing_neighborhood', $bairro);
+update_user_meta($current_user->ID, 'billing_number', $numero);
 
 //forma de pagamento
 $tipo_pgto = $_POST['tipo_pgto'];
