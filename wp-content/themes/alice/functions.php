@@ -1,4 +1,7 @@
 <?php
+        //dasativando barra superior
+        show_admin_bar(false);
+
 	//add_filter('show_admin_bar', '__return_false');
 	define('THEME_PATH', get_bloginfo('template_directory') . '/');
 	define('VENDOR', THEME_PATH . 'vendor/');

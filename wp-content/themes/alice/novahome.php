@@ -15,39 +15,31 @@ get_template_part('header-novahome');
 <section id="posts_detaque">
     <div class="container">
         <div class="row">
+            
+            <?php
+            //criando loop
+            $posts = array(
+                'post_type' => 'post',
+                'posts_per_page' => '3'
+            );
+            $loop = new WP_Query($posts);
+            if ($loop->have_posts()): while($loop->have_posts()): $loop->the_post(); ?>
+
+            
             <div class="col-sm-4 col-xs-12">
-                <img src="<?php echo get_template_directory_uri(); ?>/images/img-blog1.jpg" class="img-responsive" alt="Blog1" />
+                <img src="<?php the_post_thumbnail_url(); ?>" class="img-responsive" alt="<?php the_title(); ?>" />
                 <div class="titulo_postdestaque text-center">
-                    <h3>VAMOS CORRER QUE O VERÃO ESTÁ CHEGANDO</h3>
-                    <span>ALICE EM FORMA</span>
+                    <h3><?php the_title(); ?></h3>
+                    <span><?php the_category(", "); ?></span>
                 </div>
                 <div class="box-textpost text-center">
-                    <p class="text-left">E o verão está chegando… Esta época do ano é a hora que começa a bater o desespero em muitas mulheres. O verão se aproxima e a hora de encarar o biquíni está cada vez mais perto. </p>
-                    <button class="btn btn-default text-center btn-rosa-alice">LEIA MAIS ></button>
+                    <p class="text-left"><?php echo excerpt(20); ?></p>
+                    <button class="btn btn-default text-center btn-rosa-alice" onclick="window.location.href='<?php the_permalink(); ?>'">LEIA MAIS ></button>
                 </div>
             </div>
-            <div class="col-sm-4 col-xs-12">
-                <img src="<?php echo get_template_directory_uri(); ?>/images/img-blog2.jpg" class="img-responsive" alt="Blog2" />
-                <div class="titulo_postdestaque text-center">
-                    <h3>VAMOS CORRER QUE O VERÃO ESTÁ CHEGANDO</h3>
-                    <span>ALICE EM FORMA</span>
-                </div>
-                <div class="box-textpost text-center">
-                    <p class="text-left">E o verão está chegando… Esta época do ano é a hora que começa a bater o desespero em muitas mulheres. O verão se aproxima e a hora de encarar o biquíni está cada vez mais perto. </p>
-                    <button class="btn btn-default text-center btn-rosa-alice">LEIA MAIS ></button>
-                </div>
-            </div>
-            <div class="col-sm-4 col-xs-12">
-                <img src="<?php echo get_template_directory_uri(); ?>/images/img-blog3.jpg" class="img-responsive" alt="Blog3" />
-                <div class="titulo_postdestaque text-center">
-                    <h3>VAMOS CORRER QUE O VERÃO ESTÁ CHEGANDO</h3>
-                    <span>ALICE EM FORMA</span>
-                </div>
-                <div class="box-textpost text-center">
-                    <p class="text-left">E o verão está chegando… Esta época do ano é a hora que começa a bater o desespero em muitas mulheres. O verão se aproxima e a hora de encarar o biquíni está cada vez mais perto. </p>
-                    <button class="btn btn-default text-center btn-rosa-alice">LEIA MAIS ></button>
-                </div>
-            </div>
+            
+            <?php endwhile; endif; wp_reset_postdata(); ?>
+            
         </div>
     </div>
 </section>
@@ -64,33 +56,32 @@ get_template_part('header-novahome');
     <div class="container">
         <div class="row">
             <div class="col-sm-8 col-xs-12">
-                <!--loop posts-->
-                <div class="col-sm-12 col-xs-12">
-                    <img src="<?php echo get_template_directory_uri(); ?>/images/blog1.jpg" class="img-responsive" alt="Banner Transform" />
-                    <div class="titulo_postdestaque">
-                        <h3>VAMOS CORRER QUE O VERÃO ESTÁ CHEGANDO</h3>
-                        <span>ALICE EM FORMA</span>
-                    </div>
-                    <div class="box-textpost">
-                        <p>E o verão está chegando… Esta época do ano é a hora que começa a bater o desespero em muitas mulheres. O verão se aproxima e a hora de encarar o biquíni está cada vez mais perto. </p>
-                        <button class="btn btn-default text-center btn-rosa-alice">LEIA MAIS ></button>
-                    </div>
-                </div>
-                <!--/loop-->
+                
+            <?php
+            //criando loop
+            $posts2 = array(
+                'post_type' => 'post',
+                'offset' => '3'
+            );
+            $loop2 = new WP_Query($posts2);
+            if ($loop2->have_posts()): while($loop2->have_posts()): $loop2->the_post(); ?>
                 
                 <!--loop posts-->
                 <div class="col-sm-12 col-xs-12">
-                    <img src="<?php echo get_template_directory_uri(); ?>/images/blog1.jpg" class="img-responsive" alt="Banner Transform" />
+                    <img src="<?php the_post_thumbnail_url(); ?>" class="img-responsive" alt="<?php the_title(); ?>" />
                     <div class="titulo_postdestaque">
-                        <h3>VAMOS CORRER QUE O VERÃO ESTÁ CHEGANDO</h3>
-                        <span>ALICE EM FORMA</span>
+                        <h3><?php the_title(); ?></h3>
+                        <span><?php the_category(", "); ?></span>
                     </div>
                     <div class="box-textpost">
-                        <p>E o verão está chegando… Esta época do ano é a hora que começa a bater o desespero em muitas mulheres. O verão se aproxima e a hora de encarar o biquíni está cada vez mais perto. </p>
-                        <button class="btn btn-default text-center btn-rosa-alice">LEIA MAIS ></button>
+                        <p><?php echo excerpt(30); ?></p>
+                        <button class="btn btn-default text-center btn-rosa-alice" onclick="window.location.href='<?php the_permalink(); ?>'">LEIA MAIS ></button>
                     </div>
                 </div>
                 <!--/loop-->
+                <?php endwhile; endif; wp_reset_postdata(); ?>
+                
+                
             </div>
             <div class="col-sm-4 col-xs-12" id="div_sidebar">
                 <div class="div_sidebar">

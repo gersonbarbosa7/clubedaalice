@@ -104,10 +104,10 @@ Version: 1.0.0
 }
 
 .titulo_postdestaque{margin-top:-126px;color:#fff;padding:20px;background-image:url(images/bg-postdetaque.png); background-position:bottom center;float:left;width:100%;position:relative;}
-.titulo_postdestaque h3{font-size:18px;}
+.titulo_postdestaque h3{font-size:18px;height:37px;}
 .titulo_postdestaque span{color:#38d6dd;}
-
-#novo_miolo .titulo_postdestaque{margin-top:-105px !important;}
+#posts_detaque a, #novo_miolo a{color:#38d6dd;text-transform:uppercase;}
+#novo_miolo .titulo_postdestaque{margin-top:-125px !important;}
 #novo_miolo img{width:100%;}
 #novo_miolo .col-sm-12{margin-bottom: 40px;}
 .div_sidebar{margin-bottom: 40px;}
