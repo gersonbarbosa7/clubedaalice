@@ -6,7 +6,10 @@ $email = $_GET['email'];
 $nascimento = $_GET['nascimento'];
 $telefone = $_GET['tel'];
 $produto = $_GET['produto_id'];
+$usuario = $_GET['usuario_id'];
 ?>
+
+
 
 <!--container-->
 </div>
@@ -67,38 +70,38 @@ $produto = $_GET['produto_id'];
                         <h3 class="h3checkout">- Preencha com seus dados</h3>
 
                         <div class="form-group">
-                            <input type="text" name="cpf" id="cpf" class="form-control campo-alice" maxlength="13" placeholder="CPF" onkeyup="mascara(this, mcpf);" required/>
+                            <input type="text" name="cpf" id="cpf" class="form-control campo-alice" maxlength="13" placeholder="CPF" onkeyup="mascara(this, mcpf);" value="<?php echo get_user_meta($usuario, 'billing_cpf', true); ?>" required/>
                         </div>
                         <div class="form-group">
                             <div class="col-sm-6 col-xs-12 left0">
-                                <input type="text" name="cep" maxlength="10" id="cep" class="form-control campo-alice" onkeyup="mascara(this, mcep);" onblur="buscarCep()" placeholder="CEP" required/>
+                                <input type="text" name="cep" maxlength="10" id="cep" class="form-control campo-alice" onkeyup="mascara(this, mcep);" onblur="buscarCep()" placeholder="CEP" value="<?php echo get_user_meta($usuario, 'billing_postcode', true); ?>" required/>
                             </div>
 
                             <div class="col-sm-6 col-xs-12 right0">
-                                <input type="text" name="bairro" id="bairro" class="form-control campo-alice" placeholder="Bairro" readonly="readonly"/>
+                                <input type="text" name="bairro" id="bairro" class="form-control campo-alice" placeholder="Bairro" value="<?php echo get_user_meta($usuario, 'billing_neighborhood', true); ?>" readonly="readonly"/>
                             </div>
                             <div class="clearfix"></div>
                         </div>
                         <div class="form-group">
-                            <input type="text" name="rua" id="rua" class="form-control campo-alice" placeholder="Rua" readonly="readonly" required/>
+                            <input type="text" name="rua" id="rua" class="form-control campo-alice" placeholder="Rua" value="<?php echo get_user_meta($usuario, 'billing_address_1', true); ?>" readonly="readonly" required/>
                         </div>
                         <div class="form-group">
                             <div class="col-sm-6 col-xs-12 left0">
-                                <input type="text" name="numero" id="numero" class="form-control campo-alice" placeholder="Número" required/>
+                                <input type="text" name="numero" id="numero" class="form-control campo-alice" placeholder="Número" value="<?php echo get_user_meta($usuario, 'billing_number', true); ?>" required/>
                             </div>
 
                             <div class="col-sm-6 col-xs-12 right0">
-                                <input type="text" name="complemento" id="complemento" class="form-control campo-alice" placeholder="Complemento" />
+                                <input type="text" name="complemento" id="complemento" class="form-control campo-alice" placeholder="Complemento" value="<?php echo get_user_meta($usuario, 'billing_address_2', true); ?>" />
                             </div>
                             <div class="clearfix"></div>
                         </div>
                         <div class="form-group">
                             <div class="col-sm-6 col-xs-12 left0">
-                                <input type="text" name="cidade" id="cidade" class="form-control campo-alice" placeholder="Cidade" readonly="readonly"/>
+                                <input type="text" name="cidade" id="cidade" class="form-control campo-alice" placeholder="Cidade" value="<?php echo get_user_meta($usuario, 'billing_city', true); ?>" readonly="readonly"/>
                             </div>
 
                             <div class="col-sm-6 col-xs-12 right0">
-                                <input type="text" name="estado" id="estado" class="form-control campo-alice" placeholder="Estado" readonly="readonly"/>
+                                <input type="text" name="estado" id="estado" class="form-control campo-alice" placeholder="Estado" value="<?php echo get_user_meta($usuario, 'billing_state', true); ?>" readonly="readonly"/>
                             </div>
                             <div class="clearfix"></div>
                         </div>                        

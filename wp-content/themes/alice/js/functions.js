@@ -262,6 +262,11 @@ var fazerLogin = function(login, senha){
     })
 };
 
+var atualizarCadastro = function(){
+    //get vars to login
+    //
+};
+
 
 var preloaderModal = function(){    
     $("#preloader_modal").modal();

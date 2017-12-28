@@ -70,7 +70,7 @@
                         <input type="text" name="nome" id="nome" class="form-control campo-alice" placeholder="Seu nome completo" value="<?php echo $nome; ?>" required/>
                     </div>
                     <div class="form-group">
-                        <input type="text" name="nascimento" maxlength="10" id="nascimento" class="form-control campo-alice" onkeyup="mascara(this, mdata);" placeholder="Data de nascimento" required/>
+                        <input type="text" name="nascimento" maxlength="10" id="nascimento" class="form-control campo-alice" onkeyup="mascara(this, mdata);" placeholder="Data de nascimento" value="<?php echo get_user_meta($id, 'billing_birthdate', true); ?>" required/>
                     </div>
                     <div class="form-group">
                         <input type="email" name="email" id="email" class="form-control campo-alice" placeholder="Seu melhor e-mail" value="<?php echo $email; ?>" required/>
@@ -79,7 +79,7 @@
                         <input type="email" name="email2" id="email2" class="form-control campo-alice" placeholder="Repita seu melhor e-mail" value="<?php echo $email; ?>" required/>
                     </div>
                     <div class="form-group">
-                        <input type="tel" name="tel" id="tel" class="form-control campo-alice" maxlength="14" onkeyup="mascara(this, mtel);" placeholder="Telefone celular com DDD" required/>
+                        <input type="tel" name="tel" id="tel" class="form-control campo-alice" maxlength="14" onkeyup="mascara(this, mtel);" value="<?php echo get_user_meta($id, 'billing_cellphone', true); ?>" placeholder="Telefone celular com DDD" required/>
                     </div>
                     <div class="form-check text-center">
                         <label class="form-check-label">
@@ -90,6 +90,7 @@
 
                     
                     <input type="hidden" name="produto_id" id="produto_id" value="" />
+                    <input type="hidden" name="usuario_id" id="usuario_id" value="<?php echo $id; ?>" />
 
                 </form>
             </div>
