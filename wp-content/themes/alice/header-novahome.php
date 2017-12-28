@@ -56,7 +56,7 @@
                                  
                             <ul id="login_topo" class="logado">
                                     <li>
-                                        <a href="<?php echo home_url(); ?>/solicitar-carteirinha">Minha conta</a><br /><a href="<?php echo home_url(); ?>/sair" class="sair">Sair</a>                                        
+                                        <a href="<?php echo home_url(); ?>/painel">Minha conta</a><br /><a href="<?php echo home_url(); ?>/sair" class="sair">Sair</a>                                        
                                     </li>                                                                                                        
                                     <li><img src="<?php global $current_user; get_currentuserinfo(); if ($current_user->user_url) { echo "https://graph.facebook.com/v2.11/" . basename($current_user->user_url) . "/picture/?width=50&height=50"; } else { echo get_template_directory_uri() . "/images/no-image.png"; } ?>" class="img-responsive img-circle" /></li>
                                 </ul>
@@ -64,7 +64,7 @@
                                 <?php } else { ?>
                                 <ul id="login_topo">
                                     <li><a href="javascript:void(0)" data-toggle="modal" data-target="#login_conta">Login</a></li>
-                                    <li><a href="javascript:void(0)">Criar conta</a></li>
+                                    <li><a href="javascript:void(0)" data-toggle="modal" data-target="#login_conta">Criar conta</a></li>
                                 </ul>
                                 <?php } ?>
 

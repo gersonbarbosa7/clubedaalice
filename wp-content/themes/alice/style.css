@@ -112,3 +112,15 @@ Version: 1.0.0
 #novo_miolo .col-sm-12{margin-bottom: 40px;}
 .div_sidebar{margin-bottom: 40px;}
 #login_topo{float: left;margin-top:60px;margin-bottom:-90px;margin-left:-20px;position:relative;z-index:99;}
+.margin_top{margin-top: 40px;}
+.margin_bottom{margin-bottom: 40px;}
+.form-rosa input[type=text], .form-rosa input[type=tel], .form-rosa input[type=email], .form-rosa select{
+    border-color:#e1367f !important;
+    border-radius:10px;
+    padding:25px !important;
+}
+.form-rosa label{color:#e22a7d;font-size:16px;}
+.text_obs{font-size:14px;color:#999;font-weight:normal;}
+.links_infosform{margin-right: 15px;}
+.azul{color:#42bdc5;}
+.strong{font-weight: bold;}

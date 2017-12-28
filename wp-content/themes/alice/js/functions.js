@@ -216,7 +216,7 @@ var consultaCadastro = function(login, senha, email, nome, sobrenome, foto){
         success: function(retorno){
             if (retorno.status == 'ok'){
                 $("#text_processando").html("Usuário cadastrado com sucesso! Fazendo login...");
-                fazerLogin(retorno.login, retorno.senha);
+                fazerLogin(retorno.login, retorno.senha, 'https://projetos.gersonbarbosa.com/clubedaalice/completar-cadastro');
             } else if (retorno.status == 'existente'){
                 $("#text_processando").html("Usuário existente, fazendo login...");
                 fazerLogin(login, senha);
@@ -238,7 +238,7 @@ var consultaCadastro = function(login, senha, email, nome, sobrenome, foto){
     });
 }
 
-var fazerLogin = function(login, senha){
+var fazerLogin = function(login, senha, link){
     //get vars to login
     $.ajax({
         type: 'POST',
@@ -252,7 +252,12 @@ var fazerLogin = function(login, senha){
             $('#text_processando').html(data.message);                 
             console.log(data);
                 if (data.loggedin == true){
-                    window.location.href='https://projetos.gersonbarbosa.com/clubedaalice/solicitar-carteirinha';
+                    if (link){
+                        window.location.href=link;
+                    } else {
+                        window.location.href='https://projetos.gersonbarbosa.com/clubedaalice/painel';
+                    }
+                    
                 }
         },
          error: function (request, status, error) {                                       
@@ -263,13 +268,88 @@ var fazerLogin = function(login, senha){
 };
 
 var atualizarCadastro = function(){
+    var nascimento = $("#nascimento").val();
+    var nomecarteirinha = $("#nome_cateirinha").val();
+    var cpf = $("#cpf").val();
+    var cep = $("#cep").val();
+    var endereco = $("#rua").val();
+    var numero = $("#numero").val();
+    var complemento = $("#complemento").val();
+    var celular = $("#tel").val();
+    var usuario = $("#id_user").val();
     //get vars to login
-    //
+    $.ajax({
+        type: 'POST',
+        dataType: 'text',
+        url: 'https://projetos.gersonbarbosa.com/clubedaalice/atualizar-cadastro/',
+        data: {            
+            'nascimento': nascimento, 
+            'nomecarteirinha': nomecarteirinha, 
+            'cpf': cpf, 
+            'cep': cep, 
+            'endereco': endereco, 
+            'numero': numero, 
+            'complemento': complemento,
+            'celular': celular,
+            'id_user': usuario },
+        success: function(data){             
+            $('#text_processando').html("Atualizando seus dados...");                             
+            console.log(data);
+                if (data == 'ok'){
+                    window.location.href='https://projetos.gersonbarbosa.com/clubedaalice/solicitar-carteirinha';                    
+                } else {
+                    alert(data);
+                }
+        },
+         error: function (request, status, error) {                                       
+            alert("Algo deu errado! Detalhes: "+status);
+            $(".btnAvancar").html("Avançar");
+            console.log(request, status, error);            
+        },
+        beforeSend: function(){
+            $(".btnAvancar").html("Salvando ...");
+        },
+        complete: function(){
+            $(".btnAvancar").html("Redirecionando ...");
+        }
+    })
+    
 };
 
 
 var preloaderModal = function(){    
     $("#preloader_modal").modal();
+};
+
+var avancarCadastro = function(){
+    var nascimento = $("#nascimento").val();
+    var nomecarteirinha = $("#nome_cateirinha").val();
+    var cpf = $("#cpf").val();
+    var cep = $("#cep").val();
+    var endereco = $("#rua").val();
+    var numero = $("#numero").val();
+    var complemento = $("#complemento").val();
+    
+    //condicionando
+    if (!nascimento){
+        alert("Informe a data de nascimento");
+        $("#nascimento").focus();
+    } else if (!nomecarteirinha){
+        alert("Informe o nome a ser impresso na carteirinha");
+        $("#nome_cateirinha").focus();
+    } else if (!cpf){
+        alert("Informe o CPF");
+        $("#cpf").focus();
+    } else if (!cep){
+        alert("Informe o CEP");
+        $("#cep").focus();
+    } else if (!endereco){
+        alert("Endereço inválido, reveja seu CEP");
+        $("#cep").focus();    
+    } else {
+        atualizarCadastro();
+    }
+    
 }
 
 $(document).ready(function(){

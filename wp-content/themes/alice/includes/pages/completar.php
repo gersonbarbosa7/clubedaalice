@@ -21,13 +21,9 @@ $foto = get_user_meta($id, 'foto_do_perfil', true);
         <div class="row">
 
             <div class="col-sm-6 col-xs-12 form-dados form-rosa">
-                <h2 class="rosa">Minha conta</h2>
-                
-                <div class="col-sm-6 col-xs-12">
-                    <button class="btn btn-default" id="planoescolhido">Editar Dados</button>
-                </div>
-                <div class="col-sm-6 col-xs-12 margin_bottom">
-                    <button class="btn btn-default" id="planoescolhido" style="background:#47c2ca;border-color:#47c2ca;">Salvar Alterações</button>
+                <div class="col-sm-12 col-xs-12 margin_bottom">
+                    <h2 class="rosa">Minha conta</h2>                
+                    <h2 class="azul strong">Complete seus dados, escolha seu plano e clique no botão avançar </h2>
                 </div>
 
                 <form class="cadastro-basico" id="completar_cadastro" method="POST" action="">
@@ -102,7 +98,6 @@ $foto = get_user_meta($id, 'foto_do_perfil', true);
                     <div class="form-group">
                         <div class="col-sm-12 col-xs-12">
                             <a href="javascript:void(0)" class="links_infosform azul" data-toggle="modal" data-target="#informacoes_modal"><i class="fa fa-eye"></i> Infos importantes</a>
-                            <a href="javascript:void(0)" class="links_infosform rosa" data-toggle="modal" data-target="#historico_modal"><i class="fa fa-eye"></i> Meu histórico</a>
                         </div>                        
                         <div class="clearfix"></div>
                     </div>
@@ -166,8 +161,11 @@ $foto = get_user_meta($id, 'foto_do_perfil', true);
                 </div>-->
                 <!--/plano atual-->
                 
-                <div class="col-sm-12 col-xs-12 margin_top margin_bottom">
-                    <button class="btn btn-success" id="planoescolhido" style="background:green;border-color:green" onclick="window.location.href='<?php echo home_url(); ?>/solicitar-carteirinha'">Contratar uma carteirinha</button>
+                <div class="col-sm-8 col-xs-12 margin_top margin_bottom">
+                    <button class="btn btn-success btnAvancar" id="planoescolhido" style="background:green;border-color:green" onclick="avancarCadastro()">AVANÇAR</button>
+                </div>
+                <div class="col-sm-4 col-xs-12 margin_top margin_bottom">
+                    <button class="btn btn-danger" id="planoescolhido" style="background:#ec3b65;border-color:#ec3b65" onclick="window.location.href='<?php echo home_url(); ?>/sair'">SAIR</button>
                 </div>
 
 

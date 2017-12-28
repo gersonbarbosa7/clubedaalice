@@ -23,7 +23,8 @@
     </div>
   </div>
 </div>
-<!-- Modal -->
+
+<!-- Para homens -->
 <div class="modal fade modal-alice" id="bloqueio_homens" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
@@ -38,6 +39,54 @@
           <p><img src="https://projetos.gersonbarbosa.com/clubedaalice/wp-content/themes/alice/images/logo-clube-da-alice.png" class="img-responsive" alt="Logo - Clube da Alice" /></p>          
           <p class="p_modal">Só <strong>mulheres</strong> podem se cadastrar!</p>
           <p class="p_modal">Agradecemos seu interesse!</p>
+          <p class="p_modal"><a href="javascript:void(0)" class="link_terms">Consulte nossa política de privacidade</a><br />Clube da Alice | Todos os direitos resevados</p>
+      </div>
+        <div class="modal-footer" style="visibility: hidden">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Entrar</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Informações -->
+<div class="modal fade modal-alice" id="informacoes_modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <!--<h5 class="modal-title" id="exampleModalLabel">Fazer login</h5>-->
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body text-center">          
+          <p><img src="https://projetos.gersonbarbosa.com/clubedaalice/wp-content/themes/alice/images/logo-clube-da-alice.png" class="img-responsive" alt="Logo - Clube da Alice" /></p>          
+          <h2 class="rosa">Informações importantes!</h2>
+          <p class="p_modal">Lorem Ipsum é simplesmente uma simulação de texto da indústria tipográfica e de impressos, e vem sendo utilizado desde o século XVI, quando um impressor desconhecido pegou uma bandeja de tipos e os embaralhou para fazer um livro de modelos de tipos. Lorem Ipsum sobreviveu não só a cinco séculos, como também ao salto para a editoração eletrônica, permanecendo essencialmente inalterado. Se popularizou na década de 60, quando a Letraset lançou decalques contendo passagens de Lorem Ipsum, e mais recentemente quando passou a ser integrado a softwares de editoração eletrônica como Aldus PageMaker.</p>
+          <p class="p_modal"><a href="javascript:void(0)" class="link_terms">Consulte nossa política de privacidade</a><br />Clube da Alice | Todos os direitos resevados</p>
+      </div>
+        <div class="modal-footer" style="visibility: hidden">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Entrar</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- histórico -->
+<div class="modal fade modal-alice" id="historico_modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <!--<h5 class="modal-title" id="exampleModalLabel">Fazer login</h5>-->
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body text-center">          
+          <p><img src="https://projetos.gersonbarbosa.com/clubedaalice/wp-content/themes/alice/images/logo-clube-da-alice.png" class="img-responsive" alt="Logo - Clube da Alice" /></p>          
+          <h2 class="rosa">Histórico</h2>
+          <p class="p_modal">Sem registros</p>
           <p class="p_modal"><a href="javascript:void(0)" class="link_terms">Consulte nossa política de privacidade</a><br />Clube da Alice | Todos os direitos resevados</p>
       </div>
         <div class="modal-footer" style="visibility: hidden">
