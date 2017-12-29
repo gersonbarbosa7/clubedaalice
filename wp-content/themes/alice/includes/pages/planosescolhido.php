@@ -70,7 +70,7 @@ $usuario = $_GET['usuario_id'];
                         <h3 class="h3checkout">- Preencha com seus dados</h3>
 
                         <div class="form-group">
-                            <input type="text" name="cpf" id="cpf" class="form-control campo-alice" maxlength="13" placeholder="CPF" onkeyup="mascara(this, mcpf);" value="<?php echo get_user_meta($usuario, 'billing_cpf', true); ?>" required/>
+                            <input type="text" name="cpf" id="cpf" class="form-control campo-alice" maxlength="14" placeholder="CPF" onkeyup="mascara(this, mcpf);" value="<?php echo get_user_meta($usuario, 'billing_cpf', true); ?>" required/>
                         </div>
                         <div class="form-group">
                             <div class="col-sm-6 col-xs-12 left0">
