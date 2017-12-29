@@ -63,19 +63,19 @@ if (!$produto){
                         <div class="stepwizard-row">
                             <div class="stepwizard-step">
                                 <button type="button" class="btn btn-default bgpadrao btn-circle" disabled="disabled"></button>
-                                <p>Cadastro</p>
+                                <p class="pinativo">Cadastro</p>
+                            </div>
+                            <div class="stepwizard-step">
+                                <button type="button" class="btn btn-primary bgcircle btn-circle"></button>
+                                <p class="pinativo">Informações</p>
                             </div>
                             <div class="stepwizard-step">
                                 <button type="button" class="btn btn-default bgpadrao btn-circle" disabled="disabled"></button>
-                                <p>Informações</p>
-                            </div>
-                            <div class="stepwizard-step">
-                                <button type="button" class="btn btn-primary bgcircle btn-circle"  ></button>
-                                <p>Pagamento</p>
+                                <p class="pativo">Pagamento</p>
                             </div> 
                             <div class="stepwizard-step">
                                 <button type="button" class="btn btn-default bgpadrao btn-circle" disabled="disabled"></button>
-                                <p>Obrigado</p>
+                                <p class="pinativo">Obrigado</p>
                             </div> 
                         </div>
                     </div>

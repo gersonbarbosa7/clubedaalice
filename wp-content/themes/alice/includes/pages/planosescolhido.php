@@ -14,7 +14,7 @@ $usuario = $_GET['usuario_id'];
 <!--container-->
 </div>
 <?php if (have_posts()): while(have_posts()): the_post(); ?>
-<form class="cadastro-basico " method="POST" action="<?php echo home_url(); ?>/pagamento">
+<form class="cadastro-basico dadospessoais" method="POST" action="<?php echo home_url(); ?>/pagamento">
     <section id="minhaconta">
         <div class="container">
             <div class="row">
@@ -24,19 +24,19 @@ $usuario = $_GET['usuario_id'];
                         <div class="stepwizard-row">
                             <div class="stepwizard-step">
                                 <button type="button" class="btn btn-default bgpadrao btn-circle" disabled="disabled"></button>
-                                <p>Cadastro</p>
+                                <p class="pinativo">Cadastro</p>
                             </div>
                             <div class="stepwizard-step">
                                 <button type="button" class="btn btn-primary bgcircle btn-circle"></button>
-                                <p>Informações</p>
+                                <p class="pativo">Informações</p>
                             </div>
                             <div class="stepwizard-step">
                                 <button type="button" class="btn btn-default bgpadrao btn-circle" disabled="disabled"></button>
-                                <p>Pagamento</p>
+                                <p class="pinativo">Pagamento</p>
                             </div> 
                             <div class="stepwizard-step">
                                 <button type="button" class="btn btn-default bgpadrao btn-circle" disabled="disabled"></button>
-                                <p>Obrigado</p>
+                                <p class="pinativo">Obrigado</p>
                             </div> 
                         </div>
                     </div>
@@ -44,12 +44,12 @@ $usuario = $_GET['usuario_id'];
                 <div class="col-sm-12 col-xs-12">
 
 
-                    <div class="col-sm-12 col-xs-12">
-                        <div class="col-sm-4 col-xs-12">
+                    <div class="col-sm-12 col-xs-12 rowline">
+                        <div class="col-sm-3 col-xs-12">
                             <img src="<?php the_post_thumbnail_url(); ?>" class=" img-responsive" />
                         </div>
 
-                        <div class="col-sm-4 col-xs-12">
+                        <div class="col-sm-5 col-xs-12">
                             <h3 class="title_pink" <?php if ($cor) { echo 'style="color:' . $cor . ' !important;"'; } ?>><?php the_title(); ?></h3>
                             <?php echo excerpt(50); ?>
                         </div>
@@ -65,7 +65,7 @@ $usuario = $_GET['usuario_id'];
 
                 </div> 
 
-                <div class="col-sm-12 col-xs-12 dadoscliente form-dados">
+                <div class="col-sm-12 col-xs-12 form-dados">
                     <div class="col-sm-6 col-xs-12">
                         <h3 class="h3checkout">- Preencha com seus dados</h3>
 

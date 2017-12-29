@@ -35,7 +35,7 @@ body{font-family: 'Open Sans', sans-serif !important;}
 .bgcircle{background-color: #49c6cd !important;border-color: #49c6cd !important;}
 .btn-circle{border-radius:50% !important;}
 .bgpadrao{background-color: #bdbdbd !important;}
-#minhaconta{background-color: #fbfbfb;border-top: 1px solid #f0f0f0;border-bottom: 1px solid #f0f0f0;padding-top:30px;}
+#minhaconta{background-color: #fdfdfd;border-top: 1px solid #f0f0f0;border-bottom: 1px solid #f0f0f0;padding-top:30px;}
 .h3fcb{font-weight: bold;font-size: 20px;color:#4e6ab2;}
 .lista-btns button{margin-bottom:20px;padding:15px 22px !important;border-radius:100px;width:100%;}
 .form-dados h3{font-size:25px;margin-bottom:40px;font-weight:bold;color:#49c6cd;}
@@ -126,3 +126,15 @@ body{font-family: 'Open Sans', sans-serif !important;}
 .links_infosform{margin-right: 15px;}
 .azul{color:#42bdc5;}
 .strong{font-weight: bold;}
+.rowline{margin-top:40px;}
+.rowline h3{margin-top:0}
+.pinativo{visibility:hidden;}
+.pativo{color:#47c2ca;font-weight:bold;}
+.dadospessoais input[type=text]{
+    background:url(images/lock2.png);
+    background-repeat:no-repeat;
+    background-position:right 20px;
+}
+@media screen and (max-width:768px){
+    .left0, .right0{padding:0px !important;margin-top:15px;margin-bottom:15px;}
+}

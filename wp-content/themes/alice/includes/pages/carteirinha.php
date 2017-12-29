@@ -19,21 +19,25 @@
             <div class="col-sm-6 col-xs-12">
                 <h2 class="rosa">Minha conta</h2>
                 <div class="stepwizard">
-                    <div class="stepwizard-row">
-                        <div class="stepwizard-step">
-                            <button type="button" class="btn btn-primary bgcircle btn-circle"></button>
-                            <p>Cadastro</p>
+                        <div class="stepwizard-row">
+                            <div class="stepwizard-step">
+                                <button type="button" class="btn btn-default bgpadrao btn-circle" disabled="disabled"></button>
+                                <p class="pativo">Cadastro</p>
+                            </div>
+                            <div class="stepwizard-step">
+                                <button type="button" class="btn btn-primary bgcircle btn-circle"></button>
+                                <p class="pinativo">Informações</p>
+                            </div>
+                            <div class="stepwizard-step">
+                                <button type="button" class="btn btn-default bgpadrao btn-circle" disabled="disabled"></button>
+                                <p class="pinativo">Pagamento</p>
+                            </div> 
+                            <div class="stepwizard-step">
+                                <button type="button" class="btn btn-default bgpadrao btn-circle" disabled="disabled"></button>
+                                <p class="pinativo">Obrigado</p>
+                            </div> 
                         </div>
-                        <div class="stepwizard-step">
-                            <button type="button" class="btn btn-default bgpadrao btn-circle" disabled="disabled"></button>
-                            <p>Informações</p>
-                        </div>
-                        <div class="stepwizard-step">
-                            <button type="button" class="btn btn-default bgpadrao btn-circle" disabled="disabled"></button>
-                            <p>Pagamento</p>
-                        </div> 
                     </div>
-                </div>
 
                 <div class="col-sm-12 col-xs-12">
                     <div class="col-sm-3 col-xs-12">

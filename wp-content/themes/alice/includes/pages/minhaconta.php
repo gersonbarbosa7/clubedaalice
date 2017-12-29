@@ -31,6 +31,7 @@ $foto = get_user_meta($id, 'foto_do_perfil', true);
                 </div>
 
                 <form class="cadastro-basico" id="completar_cadastro" method="POST" action="">
+                    
                     <div class="form-group">
                         <div class="col-sm-6 col-xs-12">
                             <label for="cod_alice">Cód. Alice</label>
@@ -66,7 +67,7 @@ $foto = get_user_meta($id, 'foto_do_perfil', true);
                     <div class="form-group">
                         <div class="col-sm-6 col-xs-12">
                             <label for="data_cadastro">CPF</label>
-                            <input type="text" name="cpf" id="cpf" class="form-control campo-alice" maxlength="13" placeholder="CPF" onkeyup="mascara(this, mcpf);" value="<?php echo get_user_meta($id, 'billing_cpf', true); ?>" required/>
+                            <input type="text" name="cpf" id="cpf" class="form-control campo-alice" maxlength="14" placeholder="CPF" onkeyup="mascara(this, mcpf);" value="<?php echo get_user_meta($id, 'billing_cpf', true); ?>" required/>
                         </div>
                         <div class="col-sm-6 col-xs-12">
                             <label for="cep">CEP</label>
