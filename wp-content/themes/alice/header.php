@@ -8,6 +8,7 @@
 	<meta name="google-site-verification" content="o8Yan04vWOF0mi_yuh4TuW-nlc6yNKTUFkmfjor8XVE" />
         <link rel="stylesheet" media="all" href="<?php echo get_template_directory_uri(); ?>/style.css?ver=all" />
         <link rel="stylesheet" media="all" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
 	<?php wp_head(); ?>
 </head>
 <body <?php body_class(); ?>>
@@ -55,7 +56,7 @@
                             
                                 <?php if (is_user_logged_in()){ ?>
                                  
-                            <ul id="login_topo" class="logado">
+                            <ul id="login_topo" class="logado hidden-xs">
                                     <li>
                                         <a href="<?php echo home_url(); ?>/painel">Minha conta</a><br /><a href="<?php echo home_url(); ?>/sair" class="sair">Sair</a>                                        
                                     </li>                                                                                                        
@@ -63,7 +64,7 @@
                                 </ul>
                             
                                 <?php } else { ?>
-                                <ul id="login_topo">
+                            <ul id="login_topo" class="hidden-xs">
                                     <li><a href="javascript:void(0)" data-toggle="modal" data-target="#login_conta">Login</a></li>
                                     <li><a href="javascript:void(0)" data-toggle="modal" data-target="#login_conta">Criar conta</a></li>
                                 </ul>
@@ -85,6 +86,15 @@
 					</div>					
 				</a>
 			</div>
+                    <div class="row line_menu visible-xs">
+                    <?php if (is_user_logged_in()){ ?>
+                                 <div class="col-xs-12 visible-xs hidden-sm text-center link_mobilemenu"><i class="fa fa-user"></i> Minha conta</div>                            
+                            
+                                <?php } else { ?>
+                                 <div class="col-xs-6 visible-xs hidden-sm text-center link_mobilemenu" data-toggle="modal" data-target="#login_conta"><i class="fa fa-lock"></i> Login</div>
+                                <div class="col-xs-6 visible-xs hidden-sm text-center link_mobilemenu" data-toggle="modal" data-target="#login_conta"><i class="fa fa-user"></i> Criar conta</div>                                
+                                <?php } ?>
+                    </div>
 		</div>
 	</header>
 	<?php 

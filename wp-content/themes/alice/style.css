@@ -7,11 +7,13 @@ Version: 1.0.0
  */
  
 /* BY Gerson */
+body{font-family: 'Open Sans', sans-serif !important;}
 #login_topo{float: left;margin-top:60px;margin-bottom:-90px;margin-left:-20px;}
 #login_topo li{display:inline-block;padding-right:10px;text-align:right;vertical-align:middle;}
 .sair{color:#47c2ca !important}
 .bottom{margin-left:10% !important;}
-#logo{width:auto !important;}
+/*#logo{width:auto !important;}*/
+.line_menu{background-color:#e32d7e;color:#fff;padding:10px;margin-bottom:0 !important;}
 .modal-alice .modal-header{border-bottom: none !important}
 .modal-backdrop {background-color: #790a42 !important;opacity: 0.5 !important;}
 .modal-alice h3{font-size:25px;color:#727273;margin-top:0;}

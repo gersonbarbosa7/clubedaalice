@@ -50,7 +50,7 @@ $usuario = $_GET['usuario_id'];
                         </div>
 
                         <div class="col-sm-4 col-xs-12">
-                            <h3 class="title_pink" <?php if ($cor) { echo 'style="color:' . $cor . ' !important;"'; } ?>><?php the_title(); ?>><?php the_title(); ?></h3>
+                            <h3 class="title_pink" <?php if ($cor) { echo 'style="color:' . $cor . ' !important;"'; } ?>><?php the_title(); ?></h3>
                             <?php echo excerpt(50); ?>
                         </div>
 

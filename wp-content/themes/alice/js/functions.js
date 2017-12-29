@@ -219,7 +219,7 @@ var consultaCadastro = function(login, senha, email, nome, sobrenome, foto){
                 fazerLogin(retorno.login, retorno.senha, 'https://projetos.gersonbarbosa.com/clubedaalice/completar-cadastro');
             } else if (retorno.status == 'existente'){
                 $("#text_processando").html("Usuário existente, fazendo login...");
-                fazerLogin(login, senha);
+                fazerLogin(login, senha, '');
             } else {
                 alert(retorno.error_msg);
             }
