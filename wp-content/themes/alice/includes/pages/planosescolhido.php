@@ -212,7 +212,7 @@ $usuario = $_GET['usuario_id'];
 
                     <div class="col-sm-12 col-xs-12 text-right">
                         <button class="btn btn-danger btn-alice" onclick="window.history.back()">VOLTAR</button>
-                        <button class="btn btn-success btn-alice" type="submit" id="avancar" disabled="disabled">AVANÇAR</button>
+                        <button class="btn btn-success btn-alice" type="submit" id="avancar" <?php if (!get_user_meta($usuario, 'billing_postcode', true)) { echo 'disabled="disabled"'; } ?>>AVANÇAR</button>
                     </div>
 
                 </div>

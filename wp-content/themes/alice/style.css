@@ -83,7 +83,7 @@ body{font-family: 'Open Sans', sans-serif !important;}
 .preco_pgto{margin:20px 0;font-weight:bold;font-size:25px;color:#646464;}
 .font_menor{font-size:18px;font-weight:normal;}
 .font_menor2{font-size: 12px;}
-#planoescolhido{background-color:#e63680;color:#fff;width:100%;padding:20px 5px;border-radius:100px;border-color:#e63680;font-size:18px;}
+#planoescolhido, .planoescolhido{background-color:#e63680;color:#fff;width:100%;padding:20px 5px;border-radius:100px;border-color:#e63680;font-size:18px;}
 .red{color:red;}
 .icon_check, .icon_check-empty{position: absolute;left: 14px;top: 0;}
 .progress-bar{background-color: #e32d7f !important;}
@@ -138,3 +138,4 @@ body{font-family: 'Open Sans', sans-serif !important;}
 @media screen and (max-width:768px){
     .left0, .right0{padding:0px !important;margin-top:15px;margin-bottom:15px;}
 }
+#retorno-form{float:left;width:100%;}

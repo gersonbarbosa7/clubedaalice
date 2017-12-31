@@ -33,6 +33,9 @@ update_user_meta($current_user->ID, 'billing_address_2', $complemento);
 update_user_meta($current_user->ID, 'billing_neighborhood', $bairro);
 update_user_meta($current_user->ID, 'billing_number', $numero);
 
+//nome  da carteirinha
+$n_carteirinha = get_user_meta($current_user->ID, 'nome_impresso_na_carteirinha', true);
+
 //forma de pagamento
 $tipo_pgto = $_POST['tipo_pgto'];
 
@@ -50,7 +53,9 @@ if (!$produto){
     header("Location: " . home_url() . "/solicitar-carteirinha");
 }
 
-
+//montando a validade
+$mes_atual = date( 'm', current_time( 'timestamp', 0 ) );
+$ano_atual = date( 'Y', current_time( 'timestamp', 0 ) );
 ?>
 
 <form class="cadastro-basico " method="POST" action="<?php echo home_url(); ?>/obrigado">
@@ -58,7 +63,7 @@ if (!$produto){
         <div class="container">
             <div class="row">
                 <div class="col-sm-6 col-xs-12">
-                    <h2 class="rosa">Plano escolhido</h2>
+                    <h2 class="rosa">Pagamento</h2>
                     <div class="stepwizard">
                         <div class="stepwizard-row">
                             <div class="stepwizard-step">
@@ -66,11 +71,11 @@ if (!$produto){
                                 <p class="pinativo">Cadastro</p>
                             </div>
                             <div class="stepwizard-step">
-                                <button type="button" class="btn btn-primary bgcircle btn-circle"></button>
+                                <button type="button" class="btn btn-default bgpadrao btn-circle" disabled="disabled"></button>
                                 <p class="pinativo">Informações</p>
                             </div>
                             <div class="stepwizard-step">
-                                <button type="button" class="btn btn-default bgpadrao btn-circle" disabled="disabled"></button>
+                                <button type="button" class="btn btn-primary bgcircle btn-circle"></button>
                                 <p class="pativo">Pagamento</p>
                             </div> 
                             <div class="stepwizard-step">
@@ -94,12 +99,14 @@ if (!$produto){
                     
                     <div class="col-sm-8">
                         <p><strong>Código:</strong> ALICE 52 01 4230<br />
-                        <strong>Nome:</strong> <?php echo $nome; ?><br />
-                        <strong>Validade:</strong> NOV / 18<br />
+                        <strong>Nome:</strong> <?php echo $n_carteirinha; ?><br />
+                        <strong>Validade:</strong> <?php echo $mes_atual; ?> / <?php echo $ano_atual+1; ?><br />
                         <span class="red">Pagamento à confirmar</span></p>
                     </div>
                     
                     <div class="col-sm-12">
+                        
+                      
                         <h4 class="h4green">Presente de boas vindas:</h4>
                         <p><?php echo $presente; ?></p>
                     </div>

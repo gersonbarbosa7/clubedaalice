@@ -21,7 +21,8 @@ $userdata = array(
     'user_pass' => $password,
     'first_name' => $nome,
     'last_name' => $sosbrenome,
-    'user_email' => $user_email
+    'user_email' => $user_email,
+    'role' => 'customer'
 );
 
 $user_id = username_exists($user_name);
@@ -33,6 +34,8 @@ if (!$user_id and email_exists($user_email) == false) {
     //On success
     if (!is_wp_error($user_id)) {
         update_user_meta($user_id, 'foto_do_perfil', $foto_perfil);
+        update_user_meta($user_id, 'billing_sex', 'Feminino');
+        update_user_meta($user_id, 'billing_country', 'BR');
         $retorno = array('status' => 'ok', 'login' => $user_name, 'senha' => $password);
         echo json_encode($retorno);        
     } else {

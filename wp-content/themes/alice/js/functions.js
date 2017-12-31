@@ -267,12 +267,15 @@ var fazerLogin = function(login, senha, link){
     })
 };
 
-var atualizarCadastro = function(){
+var completarCadastro = function(){
     var nascimento = $("#nascimento").val();
     var nomecarteirinha = $("#nome_cateirinha").val();
     var cpf = $("#cpf").val();
     var cep = $("#cep").val();
     var endereco = $("#rua").val();
+    var estado = $("#estado").val();
+    var cidade = $("#cidade").val();
+    var bairro = $("#bairro").val();
     var numero = $("#numero").val();
     var complemento = $("#complemento").val();
     var celular = $("#tel").val();
@@ -288,7 +291,10 @@ var atualizarCadastro = function(){
             'cpf': cpf, 
             'cep': cep, 
             'endereco': endereco, 
+            'estado': estado, 
+            'cidade': cidade, 
             'numero': numero, 
+            'bairro': bairro, 
             'complemento': complemento,
             'celular': celular,
             'id_user': usuario },
@@ -316,12 +322,78 @@ var atualizarCadastro = function(){
     
 };
 
+var atualizarCadastro = function(){
+    var nascimento = $("#nascimento").val();
+    var nomecarteirinha = $("#nome_cateirinha").val();
+    var cpf = $("#cpf").val();
+    var cep = $("#cep").val();
+    var endereco = $("#rua").val();
+    var estado = $("#estado").val();
+    var cidade = $("#cidade").val();
+    var bairro = $("#bairro").val();
+    var numero = $("#numero").val();
+    var complemento = $("#complemento").val();
+    var celular = $("#tel").val();
+    var usuario = $("#id_user").val();
+    
+    //retorno salvamento
+    var retornoHtml = '<div class="form-group"><div class="col-sm-12 col-xs-12"><div class="alert alert-success">' +
+                       '<i class="fa fa-check"></i> Dados atualizados com sucesso!'+
+                        '</div></div><div class="clearfix"></div></div>';
+    
+    //get vars to login
+    $.ajax({
+        type: 'POST',
+        dataType: 'text',
+        url: 'https://projetos.gersonbarbosa.com/clubedaalice/atualizar-cadastro/',
+        data: {            
+            'nascimento': nascimento, 
+            'nomecarteirinha': nomecarteirinha, 
+            'cpf': cpf, 
+            'cep': cep, 
+            'endereco': endereco, 
+            'estado': estado, 
+            'cidade': cidade, 
+            'numero': numero, 
+            'bairro': bairro, 
+            'complemento': complemento,
+            'celular': celular,
+            'id_user': usuario },
+        success: function(data){             
+            $('#text_processando').html("Atualizando seus dados...");                             
+            console.log(data);
+                if (data == 'ok'){
+                    
+                    $("#retorno-form").html(retornoHtml);
+                        setTimeout(function(){
+                            $("#retorno-form").html('');                            
+                        },4500);                        
+                                 
+                } else {
+                    alert(data);
+                }
+        },
+         error: function (request, status, error) {                                       
+            alert("Algo deu errado! Detalhes: "+status);
+            $(".btnAvancar").html("Avançar");
+            console.log(request, status, error);            
+        },
+        beforeSend: function(){
+            $(".btnAvancar").html("Salvando ...");
+        },
+        complete: function(){
+            $(".btnAvancar").html("Salvar Alterações");
+        }
+    })
+    
+};
+
 
 var preloaderModal = function(){    
     $("#preloader_modal").modal();
 };
 
-var avancarCadastro = function(){
+var validarCadastro = function(redirect){
     var nascimento = $("#nascimento").val();
     var nomecarteirinha = $("#nome_cateirinha").val();
     var cpf = $("#cpf").val();
@@ -347,7 +419,12 @@ var avancarCadastro = function(){
         alert("Endereço inválido, reveja seu CEP");
         $("#cep").focus();    
     } else {
-        atualizarCadastro();
+        if (redirect == 'sim'){
+            completarCadastro();
+        } else {
+            atualizarCadastro();
+        }
+        
     }
     
 }

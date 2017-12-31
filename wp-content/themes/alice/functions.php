@@ -28,7 +28,7 @@
 		        wp_register_script('main', THEME_PATH . 'js/main.js', [], rand(0, 999));
 		        //wp_register_script('jquery', VENDOR . 'jquery/dist/jquery.min.js');
 		        wp_register_script('owl', VENDOR . 'owl.carousel/dist/owl.carousel.min.js');
-		        //wp_register_script('bootstrap', VENDOR . 'bootstrap-sass/assets/javascripts/bootstrap.min.js');
+		        wp_register_script('bootstrap', VENDOR . 'bootstrap-sass/assets/javascripts/bootstrap.min.js');
 		        wp_register_script('lightbox', THEME_PATH . 'js/lightbox.min.js');   
 		        wp_register_script('masonry', THEME_PATH . 'js/masonry.js');       
 
@@ -53,16 +53,7 @@
 	}
 	add_action('wp_enqueue_scripts', 'load_my_scripts');
 
-	// restringe CEP
-	function wc_sell_only_states( $states ) {
-		$states['BR'] = array(
-			'SC' => __( 'Santa Catarina', 'woocommerce' ),
-		);
-		return $states;
-	}
-	add_filter( 'woocommerce_states', 'wc_sell_only_states' );
-
-
+	
 	if ( ! function_exists('load_my_styles')) {
 	    function load_my_styles() {
 	        if ( ! is_admin()) {

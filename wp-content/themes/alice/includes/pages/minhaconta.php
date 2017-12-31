@@ -27,10 +27,12 @@ $foto = get_user_meta($id, 'foto_do_perfil', true);
                     <button class="btn btn-default" id="planoescolhido">Editar Dados</button>
                 </div>
                 <div class="col-sm-6 col-xs-12 margin_bottom">
-                    <button class="btn btn-default" id="planoescolhido" style="background:#47c2ca;border-color:#47c2ca;">Salvar Alterações</button>
+                    <button class="btn btn-default btnAvancar" id="planoescolhido" style="background:#47c2ca;border-color:#47c2ca;" onclick="validarCadastro()">Salvar Alterações</button>
                 </div>
 
                 <form class="cadastro-basico" id="completar_cadastro" method="POST" action="">
+                    
+                    <div id="retorno-form"></div>
                     
                     <div class="form-group">
                         <div class="col-sm-6 col-xs-12">
@@ -81,6 +83,18 @@ $foto = get_user_meta($id, 'foto_do_perfil', true);
                             <label for="endereco">Rua / Av</label>
                             <input type="text" name="rua" id="rua" class="form-control campo-alice" placeholder="Rua" value="<?php echo get_user_meta($id, 'billing_address_1', true); ?>" readonly="readonly" required/>
                         </div>                        
+                        <div class="clearfix"></div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <div class="col-sm-6 col-xs-12">
+                            <label for="estado">Estado</label>
+                            <input type="text" name="estado" id="estado" class="form-control campo-alice" placeholder="Estado" value="<?php echo get_user_meta($id, 'billing_state', true); ?>" readonly="readonly" required/>
+                        </div>
+                        <div class="col-sm-6 col-xs-12">
+                            <label for="cidade">Cidade</label>
+                            <input type="text" name="cidade" id="cidade" class="form-control campo-alice" placeholder="Cidade" value="<?php echo get_user_meta($id, 'billing_city', true); ?>" readonly="readonly" required/>
+                        </div>
                         <div class="clearfix"></div>
                     </div>
                     

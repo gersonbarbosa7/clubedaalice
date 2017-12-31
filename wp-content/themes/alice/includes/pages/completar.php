@@ -62,7 +62,7 @@ $foto = get_user_meta($id, 'foto_do_perfil', true);
                     <div class="form-group">
                         <div class="col-sm-6 col-xs-12">
                             <label for="data_cadastro">CPF</label>
-                            <input type="text" name="cpf" id="cpf" class="form-control campo-alice" maxlength="13" placeholder="CPF" onkeyup="mascara(this, mcpf);" value="<?php echo get_user_meta($id, 'billing_cpf', true); ?>" required/>
+                            <input type="text" name="cpf" id="cpf" class="form-control campo-alice" maxlength="14" placeholder="CPF" onkeyup="mascara(this, mcpf);" value="<?php echo get_user_meta($id, 'billing_cpf', true); ?>" required/>
                         </div>
                         <div class="col-sm-6 col-xs-12">
                             <label for="cep">CEP</label>
@@ -76,6 +76,18 @@ $foto = get_user_meta($id, 'foto_do_perfil', true);
                             <label for="endereco">Rua / Av</label>
                             <input type="text" name="rua" id="rua" class="form-control campo-alice" placeholder="Rua" value="<?php echo get_user_meta($id, 'billing_address_1', true); ?>" readonly="readonly" required/>
                         </div>                        
+                        <div class="clearfix"></div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <div class="col-sm-6 col-xs-12">
+                            <label for="estado">Estado</label>
+                            <input type="text" name="estado" id="estado" class="form-control campo-alice" placeholder="Estado" value="<?php echo get_user_meta($id, 'billing_state', true); ?>" readonly="readonly" required/>
+                        </div>
+                        <div class="col-sm-6 col-xs-12">
+                            <label for="cidade">Cidade</label>
+                            <input type="text" name="cidade" id="cidade" class="form-control campo-alice" placeholder="Cidade" value="<?php echo get_user_meta($id, 'billing_city', true); ?>" readonly="readonly" required/>
+                        </div>
                         <div class="clearfix"></div>
                     </div>
                     
@@ -103,6 +115,7 @@ $foto = get_user_meta($id, 'foto_do_perfil', true);
                     </div>
                     
                     <input type="hidden" name="id_user" id="id_user" value="<?php echo $id; ?>" />
+                    <input type="hidden" name="bairro" id="bairro" value="" />
 
                 </form>
             </div>
@@ -162,7 +175,7 @@ $foto = get_user_meta($id, 'foto_do_perfil', true);
                 <!--/plano atual-->
                 
                 <div class="col-sm-8 col-xs-12 margin_top margin_bottom">
-                    <button class="btn btn-success btnAvancar" id="planoescolhido" style="background:green;border-color:green" onclick="avancarCadastro()">AVANÇAR</button>
+                    <button class="btn btn-success btnAvancar" id="planoescolhido" style="background:green;border-color:green" onclick="validarCadastro('sim')">AVANÇAR</button>
                 </div>
                 <div class="col-sm-4 col-xs-12 margin_top margin_bottom">
                     <button class="btn btn-danger" id="planoescolhido" style="background:#ec3b65;border-color:#ec3b65" onclick="window.location.href='<?php echo home_url(); ?>/sair'">SAIR</button>
