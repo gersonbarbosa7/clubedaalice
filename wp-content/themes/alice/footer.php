@@ -57,9 +57,6 @@
         get_template_part('includes/modules/module', 'modals');
         //get_template_part('includes/modules/module', 'midia');
 ?>
-
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-<script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 <script type="text/javascript" src="<?php echo get_template_directory_uri(); ?>/js/mascaras.js"></script>
 <script type="text/javascript" src="<?php echo get_template_directory_uri(); ?>/js/functions.js"></script>
 	<?php 
@@ -139,6 +136,8 @@
                 
 
 	</script>
-        <?php wp_nonce_field('ajax-login-nonce', 'security'); ?>     
+        <?php wp_nonce_field('ajax-login-nonce', 'security'); ?>  
+        <script type="text/javascript" src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+  <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
 </body>
 </html>

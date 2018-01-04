@@ -9,6 +9,7 @@
         <link rel="stylesheet" media="all" href="<?php echo get_template_directory_uri(); ?>/style.css?ver=all" />
         <link rel="stylesheet" media="all" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
         <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+        
 	<?php wp_head(); ?>
 </head>
 <body <?php body_class(); ?>>
