@@ -1,0 +1,312 @@
+.menu-principal {
+	margin-bottom: 25px;
+}
+
+.single-cda_cupom .menu-principal {
+	margin-bottom: 0;
+}
+
+.box-parceiro>.box-content>hgroup>h3 {
+	padding-bottom: 0;
+}
+
+.box-parceiro>.box-content>hgroup>h3>a {
+	text-transform: uppercase;
+	font-weight: bold;
+	font-size: 15px !important;
+	color: #e6357f;
+    min-height: 20px !important;
+}
+
+.box-parceiro>.box-content>hgroup>h3>a:nth-child(2) {
+	color: #e6357f !important;
+}
+
+.box-parceiro .read-more {
+	background-color: #e6357f;
+	text-transform: uppercase;
+	font-weight: bold;
+	font-size: 16px;
+	margin-bottom: 15px;
+}
+
+#destaque-parceiro {
+	display: block;
+	max-width: 100%;
+	height: auto;
+	margin-bottom: 20px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.container-cupom {
+	width: 100%;
+	// max-width: 768px;
+	max-width: 900px;
+	border-radius: 15px;
+	-moz-border-radius: 15px;
+	-webkit-border-radius: 15px;
+	background-color: #e73680;
+	padding: 10px;
+	margin-right: auto;
+	margin-left: auto;
+}
+
+.container-cupom.azul {
+	background-color: #54c2c9;
+}
+
+.container-cupom.azul-escuro {
+	background-color: #3b5997;
+	color: white;
+    text-align: center;
+    font-size: 25px;
+}
+
+@media screen and (max-width: 560px) {
+	.container-cupom.azul-escuro {
+	    font-size: 18px;
+	}
+}
+
+.container-cupom.branco {
+    background: white;
+    border: 1px solid #b32a64;
+    padding: 10px 40px;
+    // padding: 10px 15px;
+}
+
+.container-cupom.branco p.title {
+    color: white;
+    background: #b32a64;
+    font-size: 20px;
+    padding: 10px;
+    max-width: 300px;
+    margin: 0 auto 20px auto;
+    text-align: center;
+    border-radius: 10px;
+}
+
+.container-cupom.branco p {
+    font-size: 11px;
+    margin: 2px auto;
+}
+
+@media screen and (max-width: 560px) {
+	.container-cupom.branco {
+	    padding: 10px;
+	}
+	.container-cupom.branco p.title {
+		font-size: 15px;
+    	padding: 5px;
+    	margin: 0 auto 15px auto;
+	}
+}
+
+@media screen and (max-width: 798px){
+	.container-cupom {
+		width: auto;
+		margin-left: 15px;
+		margin-right: 15px;
+	}
+}
+
+.container-cupom-numero {
+	width: 100%;
+	max-width: 530px;
+	border-radius: 15px;
+	-moz-border-radius: 15px;
+	-webkit-border-radius: 15px;
+	padding: 20px;
+	margin-right: auto;
+	margin-left: auto;
+	background-color: #48c3cb;
+	margin-top: 18px;
+	text-align: center;
+	color: #FFF;
+	font-size: 70px;
+	font-weight: bold;
+}
+
+@media screen and (max-width: 560px){
+	.container-cupom-numero {
+		width: auto;
+		margin-left: 15px;
+		margin-right: 15px;
+		font-size: 35px;
+	}
+}
+
+.container-cupom h1 {
+	text-align: center;
+	color: #FFF;
+	font-size: 33px;
+	margin-top: 10px;
+}
+
+.container-cupom.azul>h1>small {
+    font-size: 22px;
+    color: white;
+}
+
+@media screen and (max-width: 560px) {
+	.container-cupom h1 {
+		font-size: 16px;
+	}
+	.container-cupom.azul>h1>small {
+	    font-size: 11px;
+	}
+}
+body > main > div:nth-child(4) > div.row > div:nth-child(3) > h2 {
+    font-size: 33px;
+    color: white;
+    font-weight: 700;
+    text-align: center;
+}
+
+@media screen and (max-width: 560px) {
+	body > main > div:nth-child(4) > div.row > div:nth-child(3) > h2 {
+		font-size: 20px;
+		text-transform: none;
+	}
+}
+
+.container-cupom .conteudo {
+	text-align: left;
+	color: #FFF;
+	padding: 0 90px;
+}
+
+@media screen and (max-width: 560px) {
+	.container-cupom .conteudo {
+		padding: 0;
+	}
+}
+
+.container-cupom + .container-cupom {
+	margin-top: 18px;
+}
+
+/* Buttons and Links */
+.container-cupom .link-face {
+    width: 300px;
+    text-decoration: none;
+    text-align: center;
+    display: block;
+    margin: 10px auto;
+    background-color: #3b5997;
+    background-image: url('../img/Facebook-512.png');
+    border: 1px dashed #fff;
+    border-radius: 30px;
+    color: #fff !important;
+    padding: 18px 8px;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: 275px 10px;
+}
+
+@media screen and (max-width: 768px){
+	.container-cupom .link-face {
+		width: 100%;
+		max-width: 300px;
+	}
+}
+
+.container-cupom .link-face:hover {
+	-webkit-transition: all 0.3s;
+	-moz-transition: all 0.3s;
+	transition: all 0.3s;
+}
+
+.container-cupom .message {
+	color: #FFF;
+	font-size: 24px;
+	font-weight: bold;
+	text-align: center;
+}
+
+/* Form */
+.container-cupom form {
+	color: #FFF;
+	// margin-top: 30px;
+}
+.container-cupom form p {
+	text-align: center;
+}
+.container-cupom .form-group {
+	margin: 30px 0 0;
+}
+.container-cupom .form-item {
+	max-width: none;
+	margin-bottom: 15px;
+	position: relative;
+}
+.container-cupom .form-control {
+	box-sizing: border-box;
+	border-radius: 30px;
+	border: 1px solid #fff;
+	color: #fff;
+	font-size: 16px;
+	display: block;
+	height: 50px;
+	padding: 20px 20px 0;
+	width: 100%;
+	background: transparent;
+}
+.container-cupom .form-control:focus {
+	border-color: rgba(255, 255, 255, 0.8);
+	border-style: dashed;
+	-webkit-transition: all 0.3s;
+	-moz-transition: all 0.3s;
+	transition: all 0.3s;
+}
+.container-cupom .label-float {
+ 	color: #FFF;
+    position: absolute;
+    top: 0;
+    line-height: 25px;
+    padding: 0 30px;
+	-webkit-transition: line-height linear 0.2s;
+	transition: line-height linear 0.2s;
+	cursor: text;
+}
+.container-cupom .form-control:focus + .label-float,
+.container-cupom .form-control:valid + .label-float {
+	color: #f2f2f2;
+	font-size: 12px;
+	line-height: 1.5;
+}
+
+.form-item.email-preferencial input {
+    box-sizing: border-box;
+    border-radius: 30px;
+    color: #fff;
+    font-size: 16px;
+    display: block;
+    height: 50px;
+    padding: 20px 20px 0px;
+    width: 100%;
+    background: #439aa0;
+    border: none;
+}
+
+.container-cupom .btn-cadastrar {
+	width: 200px;
+	text-decoration: none;
+	text-align: center;
+	display: block;
+	margin: 40px auto 0;
+	background-color: transparent;
+	border: 1px dashed #fff;
+	border-radius: 30px;
+	color: #fff;
+	padding: 10px 8px;
+	font-size: 18px;
+	cursor: pointer;
+}
+.container-cupom .btn-cadastrar:hover {
+	background-color: rgba(255, 255, 255, 0.1);
+	-webkit-transition: all 0.3s;
+	-moz-transition: all 0.3s;
+	transition: all 0.3s;
+}
