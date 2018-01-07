@@ -116,10 +116,16 @@ body{font-family: 'Open Sans', sans-serif !important;}
 #login_topo{float: left;margin-top:60px;margin-bottom:-90px;margin-left:-20px;position:relative;z-index:99;}
 .margin_top{margin-top: 40px;}
 .margin_bottom{margin-bottom: 40px;}
-.form-rosa input[type=text], .form-rosa input[type=tel], .form-rosa input[type=email], .form-rosa select{
-    border-color:#e1367f !important;
+.form-rosa input[type=text], .form-rosa input[type=tel], .form-rosa input[type=email], .form-rosa select, .woocommerce-checkout .select2-selection{
+    border:2px solid #e1367f !important;
     border-radius:10px;
     padding:25px !important;
+}
+.woocommerce-checkout input[type=text], .woocommerce-checkout input[type=tel], .woocommerce-checkout input[type=email], .woocommerce-checkout select{
+    padding: 9px !important;
+}
+.woocommerce-checkout .select2-selection{
+    padding: 10px 0 40px 0 !important;
 }
 .form-rosa label{color:#e22a7d;font-size:16px;}
 .text_obs{font-size:14px;color:#999;font-weight:normal;}

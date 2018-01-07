@@ -210,13 +210,13 @@ var consultaCadastro = function(login, senha, email, nome, sobrenome, foto){
     var dados = "login="+login+"&senha="+senha+"&email="+email+"&nome="+nome+"&sobrenome="+sobrenome+"&foto="+foto;
     $.ajax({
         type:"POST",
-        url:"https://projetos.gersonbarbosa.com/clubedaalice/cadastro-login/",
+        url:"https://www.gersonbarbosa.com/projetos/clubedaalice/cadastro-login/",
         dataType:"json",
         data: dados,
         success: function(retorno){
             if (retorno.status == 'ok'){
                 $("#text_processando").html("Usuário cadastrado com sucesso! Fazendo login...");
-                fazerLogin(retorno.login, retorno.senha, 'https://projetos.gersonbarbosa.com/clubedaalice/completar-cadastro');
+                fazerLogin(retorno.login, retorno.senha, 'https://www.gersonbarbosa.com/projetos/clubedaalice/completar-cadastro');
             } else if (retorno.status == 'existente'){
                 $("#text_processando").html("Usuário existente, fazendo login...");
                 fazerLogin(login, senha, '');
@@ -243,7 +243,7 @@ var fazerLogin = function(login, senha, link){
     $.ajax({
         type: 'POST',
         dataType: 'json',
-        url: 'https://projetos.gersonbarbosa.com/clubedaalice/fazer-login/',
+        url: 'https://www.gersonbarbosa.com/projetos/clubedaalice/fazer-login/',
         data: {            
             'login': login, 
             'senha': senha, 
@@ -255,7 +255,7 @@ var fazerLogin = function(login, senha, link){
                     if (link){
                         window.location.href=link;
                     } else {
-                        window.location.href='https://projetos.gersonbarbosa.com/clubedaalice/painel';
+                        window.location.href='https://www.gersonbarbosa.com/projetos/clubedaalice/painel';
                     }
                     
                 }
@@ -284,7 +284,7 @@ var completarCadastro = function(){
     $.ajax({
         type: 'POST',
         dataType: 'text',
-        url: 'https://projetos.gersonbarbosa.com/clubedaalice/atualizar-cadastro/',
+        url: 'https://www.gersonbarbosa.com/projetos/clubedaalice/atualizar-cadastro/',
         data: {            
             'nascimento': nascimento, 
             'nomecarteirinha': nomecarteirinha, 
@@ -302,7 +302,7 @@ var completarCadastro = function(){
             $('#text_processando').html("Atualizando seus dados...");                             
             console.log(data);
                 if (data == 'ok'){
-                    window.location.href='https://projetos.gersonbarbosa.com/clubedaalice/solicitar-carteirinha';                    
+                    window.location.href='https://www.gersonbarbosa.com/projetos/clubedaalice/solicitar-carteirinha';                    
                 } else {
                     alert(data);
                 }
@@ -345,7 +345,7 @@ var atualizarCadastro = function(){
     $.ajax({
         type: 'POST',
         dataType: 'text',
-        url: 'https://projetos.gersonbarbosa.com/clubedaalice/atualizar-cadastro/',
+        url: 'https://www.gersonbarbosa.com/projetos/clubedaalice/atualizar-cadastro/',
         data: {            
             'nascimento': nascimento, 
             'nomecarteirinha': nomecarteirinha, 
@@ -427,7 +427,7 @@ var validarCadastro = function(redirect){
         
     }
     
-}
+};
 
 $(document).ready(function(){
     formasPgto();

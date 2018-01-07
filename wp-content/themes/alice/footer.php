@@ -94,7 +94,21 @@
 		fbq('track', 'PageView');
 	</script>-->
 	<!--<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script> -->
-	<script type="text/javascript" src="<?php bloginfo('template_directory'); ?>/vendor/jquery-sticky/jquery.sticky.js"></script>
+	
+        <?php wp_nonce_field('ajax-login-nonce', 'security'); ?>  
+
+<?php if (!is_page('finalizar-compra')){ ?>
+<script type="text/javascript" src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+<?php } else { ?>
+<!--<script type="text/javascript">
+    $(document).ready(function(){
+        $("main[role='main']").hide();
+    });    
+</script>-->
+<?php } ?>
+
+<script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="<?php bloginfo('template_directory'); ?>/vendor/jquery-sticky/jquery.sticky.js"></script>
 	<script type="text/javascript">
 		$(document).ready(function(){
 			<?php if(is_user_logged_in()) : ?>
@@ -136,8 +150,5 @@
                 
 
 	</script>
-        <?php wp_nonce_field('ajax-login-nonce', 'security'); ?>  
-        
-  <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
 </body>
 </html>
